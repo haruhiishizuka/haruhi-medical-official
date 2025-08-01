@@ -299,15 +299,29 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                    }
+                    if (img.loading === 'lazy') {
+                        img.classList.add('loaded');
+                    }
                     imageObserver.unobserve(img);
                 }
             });
         });
 
+        // data-src を使う遅延読み込み画像
         const lazyImages = document.querySelectorAll('img[data-src]');
         lazyImages.forEach(img => imageObserver.observe(img));
+        
+        // loading="lazy" を使う画像
+        const lazyLoadingImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyLoadingImages.forEach(img => imageObserver.observe(img));
+    } else {
+        // IntersectionObserverをサポートしていない場合のフォールバック
+        const lazyLoadingImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyLoadingImages.forEach(img => img.classList.add('loaded'));
     }
 
     // スクロールトップボタン（必要に応じて追加）

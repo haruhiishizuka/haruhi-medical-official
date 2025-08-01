@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像最適化ツール</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .drop-zone {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .drop-zone.dragover {
+            border-color: #007cba;
+            background-color: #f0f8ff;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        .controls label {
+            display: block;
+            margin: 10px 0;
+        }
+        .preview {
+            margin: 20px 0;
+        }
+        .preview img {
+            max-width: 300px;
+            margin: 10px;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007cba;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>画像最適化ツール</h1>
+    <p>重い画像ファイルをWebP形式に変換して軽量化します。</p>
+    
+    <div class="drop-zone" id="dropZone">
+        <p>ここに画像ファイルをドラッグ&ドロップするか、クリックして選択してください</p>
+        <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+    </div>
+    
+    <div class="controls">
+        <label>
+            品質設定: <input type="range" id="quality" min="0.1" max="1" step="0.1" value="0.8">
+            <span id="qualityValue">80%</span>
+        </label>
+        <label>
+            最大幅: <input type="number" id="maxWidth" value="1200" min="100" max="2000">px
+        </label>
+    </div>
+    
+    <div class="preview" id="preview"></div>
+    
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const preview = document.getElementById('preview');
+        const qualitySlider = document.getElementById('quality');
+        const qualityValue = document.getElementById('qualityValue');
+        const maxWidthInput = document.getElementById('maxWidth');
+        
+        qualitySlider.addEventListener('input', () => {
+            qualityValue.textContent = Math.round(qualitySlider.value * 100) + '%';
+        });
+        
+        dropZone.addEventListener('click', () => fileInput.click());
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+        
+        fileInput.addEventListener('change', (e) => {
+            handleFiles(e.target.files);
+        });
+        
+        function handleFiles(files) {
+            preview.innerHTML = '';
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    processImage(file);
+                }
+            });
+        }
+        
+        function processImage(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    
+                    // リサイズ計算
+                    const maxWidth = parseInt(maxWidthInput.value);
+                    let { width, height } = img;
+                    
+                    if (width > maxWidth) {
+                        height = (height * maxWidth) / width;
+                        width = maxWidth;
+                    }
+                    
+                    canvas.width = width;
+                    canvas.height = height;
+                    
+                    // 画像を描画
+                    ctx.drawImage(img, 0, 0, width, height);
+                    
+                    // WebPに変換
+                    canvas.toBlob((blob) => {
+                        const originalSize = file.size;
+                        const newSize = blob.size;
+                        const reduction = Math.round((1 - newSize / originalSize) * 100);
+                        
+                        // プレビュー表示
+                        const div = document.createElement('div');
+                        div.innerHTML = `
+                            <h3>${file.name}</h3>
+                            <p>元のサイズ: ${formatBytes(originalSize)}</p>
+                            <p>新しいサイズ: ${formatBytes(newSize)} (${reduction}% 削減)</p>
+                            <img src="${canvas.toDataURL()}" alt="最適化後の画像">
+                            <br>
+                            <a href="${URL.createObjectURL(blob)}" download="${file.name.replace(/\.[^/.]+$/, '')}.webp" class="download-link">WebPをダウンロード</a>
+                        `;
+                        preview.appendChild(div);
+                    }, 'image/webp', parseFloat(qualitySlider.value));
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    </script>
+</body>
+</html>
