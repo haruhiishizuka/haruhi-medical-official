@@ -12,22 +12,24 @@
     <!-- ヘッダー -->
     <header class="header">
         <nav class="navbar">
-            <div class="container">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="nav-brand">
                     <a href="../../index.html" class="logo-text" style="text-decoration: none; color: #333333;">株式会社はるひメディカルサービス</a>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../about.html">About Us</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
-                </ul>
-                <a href="https://medimatch.jp" target="_blank" class="medimatch-btn">
-                    <i class="fas fa-external-link-alt"></i> Medimatch
-                </a>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <ul class="nav-menu">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../about.html">About Us</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                    <a href="https://medimatch.jp" target="_blank" class="medimatch-btn">
+                        <i class="fas fa-external-link-alt"></i> Medimatch
+                    </a>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -35,16 +37,21 @@
 
 
     <!-- ページヒーロー -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-title">News & Insights</h1>
-            <p class="page-subtitle">最新ニュース・コラム</p>
+    <section class="page-hero" style="background-image: url('../../images/haikei.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; margin-top: 80px; padding: 120px 0; position: relative;">
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="page-title" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">News & Insights</h1>
+            <p class="page-subtitle" style="color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">最新ニュース・コラム</p>
         </div>
     </section>
 
     <!-- ニュース一覧 -->
-    <section class="news-list-section">
+    <section class="news-list-section" style="padding: 5rem 0; background: #ffffff;">
         <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <p class="section-subtitle" style="color: #667eea; font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem;">NEWS & INSIGHTS</p>
+                <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">記事一覧</h2>
+            </div>
             <!-- タブナビゲーション -->
             <div class="news-tabs">
                 <button class="tab-btn active" data-tab="all">すべて</button>
@@ -153,18 +160,22 @@
             </div>
 
             <!-- ページネーション -->
-            <div class="pagination">
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn next">次へ <i class="fas fa-chevron-right"></i></button>
+            <div class="pagination" style="text-align: center; margin-top: 3rem;">
+                <button class="page-btn active" style="background: #667eea; color: white; border: none; padding: 0.5rem 1rem; margin: 0 0.25rem; border-radius: 5px; cursor: pointer;">1</button>
+                <button class="page-btn" style="background: white; color: #333; border: 1px solid #ddd; padding: 0.5rem 1rem; margin: 0 0.25rem; border-radius: 5px; cursor: pointer;">2</button>
+                <button class="page-btn" style="background: white; color: #333; border: 1px solid #ddd; padding: 0.5rem 1rem; margin: 0 0.25rem; border-radius: 5px; cursor: pointer;">3</button>
+                <button class="page-btn next" style="background: white; color: #333; border: 1px solid #ddd; padding: 0.5rem 1rem; margin: 0 0.25rem; border-radius: 5px; cursor: pointer;">次へ <i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
 
     <!-- サイドバー的な情報 -->
-    <section class="news-sidebar-section">
+    <section class="news-sidebar-section" style="padding: 5rem 0; background: #f8f9fa;">
         <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <p class="section-subtitle" style="color: #667eea; font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem;">ADDITIONAL INFO</p>
+                <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">関連情報</h2>
+            </div>
             <div class="sidebar-content">
                 <div class="popular-articles">
                     <h3>人気記事</h3>
