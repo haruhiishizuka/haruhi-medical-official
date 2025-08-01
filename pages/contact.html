@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ | 株式会社はるひメディカルサービス</title>
+    <meta name="description" content="株式会社はるひメディカルサービスへのお問い合わせページ。医療業界の人材・経営に関するご相談はお気軽にお問い合わせください。">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- ヒラギノフォントはシステムフォントとして使用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="nav-brand">
+                    <a href="../index.html" class="logo-text" style="text-decoration: none; color: #333333;">株式会社はるひメディカルサービス</a>
+                </div>
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <ul class="nav-menu">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                    <a href="https://medimatch.jp" target="_blank" class="medimatch-btn">
+                        <i class="fas fa-external-link-alt"></i> Medimatch
+                    </a>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ページヒーロー -->
+    <section class="page-hero" style="background-image: url('../images/haikei.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; margin-top: 80px; padding: 120px 0; position: relative;">
+        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="page-title" style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">Contact</h1>
+            <p class="page-subtitle" style="color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">お気軽にお問い合わせください</p>
+        </div>
+    </section>
+
+
+    <!-- お問い合わせフォーム -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">CONTACT FORM</p>
+                <h2 class="section-title">お問い合わせフォーム</h2>
+            </div>
+            
+            <div class="form-wrapper">
+                <form class="contact-form" action="#" method="POST">
+                    <!-- お問い合わせ種別 -->
+                    <div class="form-group">
+                        <label for="inquiry-type" class="form-label">
+                            お問い合わせ種別 <span class="required">*</span>
+                        </label>
+                        <select id="inquiry-type" name="inquiry-type" class="form-select" required>
+                            <option value="">選択してください</option>
+                            <option value="recruitment">人材紹介について</option>
+                            <option value="consulting">経営コンサルティングについて</option>
+                            <option value="succession">事業承継について</option>
+                            <option value="career">転職・キャリア相談</option>
+                            <option value="partnership">業務提携について</option>
+                            <option value="other">その他</option>
+                        </select>
+                    </div>
+
+                    <!-- 法人・個人 -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            お立場 <span class="required">*</span>
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="client-type" value="corporate" required>
+                                <span class="radio-custom"></span>
+                                法人・医療機関
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="client-type" value="individual" required>
+                                <span class="radio-custom"></span>
+                                個人（求職者）
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 基本情報 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">
+                                姓 <span class="required">*</span>
+                            </label>
+                            <input type="text" id="last-name" name="last-name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">
+                                名 <span class="required">*</span>
+                            </label>
+                            <input type="text" id="first-name" name="first-name" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="last-name-kana" class="form-label">
+                                セイ <span class="required">*</span>
+                            </label>
+                            <input type="text" id="last-name-kana" name="last-name-kana" class="form-input" placeholder="カタカナで入力" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first-name-kana" class="form-label">
+                                メイ <span class="required">*</span>
+                            </label>
+                            <input type="text" id="first-name-kana" name="first-name-kana" class="form-input" placeholder="カタカナで入力" required>
+                        </div>
+                    </div>
+
+                    <!-- 法人情報（法人選択時のみ表示） -->
+                    <div class="form-group corporate-fields" style="display: none;">
+                        <label for="company-name" class="form-label">
+                            法人・医療機関名 <span class="required">*</span>
+                        </label>
+                        <input type="text" id="company-name" name="company-name" class="form-input">
+                    </div>
+
+                    <div class="form-group corporate-fields" style="display: none;">
+                        <label for="department" class="form-label">部署・役職</label>
+                        <input type="text" id="department" name="department" class="form-input">
+                    </div>
+
+                    <!-- 連絡先情報 -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">
+                            メールアドレス <span class="required">*</span>
+                        </label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="prefecture" class="form-label">
+                            都道府県 <span class="required">*</span>
+                        </label>
+                        <select id="prefecture" name="prefecture" class="form-select" required>
+                            <option value="">選択してください</option>
+                            <option value="北海道">北海道</option>
+                            <option value="青森県">青森県</option>
+                            <option value="岩手県">岩手県</option>
+                            <option value="宮城県">宮城県</option>
+                            <option value="秋田県">秋田県</option>
+                            <option value="山形県">山形県</option>
+                            <option value="福島県">福島県</option>
+                            <option value="茨城県">茨城県</option>
+                            <option value="栃木県">栃木県</option>
+                            <option value="群馬県">群馬県</option>
+                            <option value="埼玉県">埼玉県</option>
+                            <option value="千葉県">千葉県</option>
+                            <option value="東京都">東京都</option>
+                            <option value="神奈川県">神奈川県</option>
+                            <option value="新潟県">新潟県</option>
+                            <option value="富山県">富山県</option>
+                            <option value="石川県">石川県</option>
+                            <option value="福井県">福井県</option>
+                            <option value="山梨県">山梨県</option>
+                            <option value="長野県">長野県</option>
+                            <option value="岐阜県">岐阜県</option>
+                            <option value="静岡県">静岡県</option>
+                            <option value="愛知県">愛知県</option>
+                            <option value="三重県">三重県</option>
+                            <option value="滋賀県">滋賀県</option>
+                            <option value="京都府">京都府</option>
+                            <option value="大阪府">大阪府</option>
+                            <option value="兵庫県">兵庫県</option>
+                            <option value="奈良県">奈良県</option>
+                            <option value="和歌山県">和歌山県</option>
+                            <option value="鳥取県">鳥取県</option>
+                            <option value="島根県">島根県</option>
+                            <option value="岡山県">岡山県</option>
+                            <option value="広島県">広島県</option>
+                            <option value="山口県">山口県</option>
+                            <option value="徳島県">徳島県</option>
+                            <option value="香川県">香川県</option>
+                            <option value="愛媛県">愛媛県</option>
+                            <option value="高知県">高知県</option>
+                            <option value="福岡県">福岡県</option>
+                            <option value="佐賀県">佐賀県</option>
+                            <option value="長崎県">長崎県</option>
+                            <option value="熊本県">熊本県</option>
+                            <option value="大分県">大分県</option>
+                            <option value="宮崎県">宮崎県</option>
+                            <option value="鹿児島県">鹿児島県</option>
+                            <option value="沖縄県">沖縄県</option>
+                        </select>
+                    </div>
+
+                    <!-- お問い合わせ内容 -->
+                    <div class="form-group">
+                        <label for="subject" class="form-label">
+                            件名 <span class="required">*</span>
+                        </label>
+                        <input type="text" id="subject" name="subject" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">
+                            お問い合わせ内容 <span class="required">*</span>
+                        </label>
+                        <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="具体的なご相談内容をお聞かせください" required></textarea>
+                    </div>
+
+                    <!-- 希望連絡時間 -->
+                    <div class="form-group">
+                        <label for="contact-time" class="form-label">ご連絡希望時間帯</label>
+                        <select id="contact-time" name="contact-time" class="form-select">
+                            <option value="">指定なし</option>
+                            <option value="morning">午前中（9:00～12:00）</option>
+                            <option value="afternoon">午後（13:00～17:00）</option>
+                            <option value="evening">夕方（17:00～19:00）</option>
+                        </select>
+                    </div>
+
+                    <!-- プライバシーポリシー同意 -->
+                    <div class="form-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" name="privacy-agree" required>
+                            <span class="checkbox-custom"></span>
+                            <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span>
+                        </label>
+                    </div>
+
+
+                    <!-- 送信ボタン -->
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> 送信する
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- よくある質問 -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">FAQ</p>
+                <h2 class="section-title">よくある質問</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>相談料はかかりますか？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>初回のご相談は無料で承っております。お気軽にお問い合わせください。具体的なサービス提供については、内容に応じてお見積もりをご提示いたします。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>どのような医療機関に対応していますか？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>病院・クリニック・介護施設・調剤薬局など、医療・介護に関わる全ての事業所に対応しております。規模に関わらず、お気軽にご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>全国対応可能ですか？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、全国対応可能です。遠方の場合はオンラインでのご相談も承っております。必要に応じて現地にお伺いすることも可能です。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>秘密保持は徹底していますか？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、厳格な秘密保持体制を整えております。ご相談内容や個人情報の取り扱いについては、プライバシーポリシーに従い適切に管理いたします。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>急ぎの案件にも対応可能ですか？</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>可能な限り迅速に対応いたします。平均24時間以内に初回ご連絡をさせていただいております。緊急性の高い案件については、お電話でご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-footer">
+                <h3>詳しく知りたい医療機関さまへ</h3>
+                <p>上記以外のご質問や具体的な事例紹介は、お気軽にお問い合わせフォームからご連絡ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section company-info">
+                    <img src="../images/logo-white.png" alt="株式会社はるひメディカルサービス" class="footer-logo">
+                    <p>医療業界に特化した人材・経営コンサルティングで<br>医療の未来を支えます</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#"><i class="fab fa-note"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">会社概要</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="https://medimatch.jp" target="_blank">Medimatch</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> jinji@haruhi-medical.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 愛知県岩倉市大地新町3丁目45番地2</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="privacy.html">プライバシーポリシー</a>
+                    <a href="terms.html">利用規約</a>
+                    <a href="sitemap.html">サイトマップ</a>
+                </div>
+                <p class="copyright">&copy; 2024 株式会社はるひメディカルサービス All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // フォームの動的表示制御
+        document.addEventListener('DOMContentLoaded', function() {
+            const clientTypeInputs = document.querySelectorAll('input[name="client-type"]');
+            const corporateFields = document.querySelectorAll('.corporate-fields');
+            const companyNameField = document.getElementById('company-name');
+            
+            clientTypeInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    if (this.value === 'corporate') {
+                        corporateFields.forEach(field => {
+                            field.style.display = 'block';
+                        });
+                        companyNameField.required = true;
+                    } else {
+                        corporateFields.forEach(field => {
+                            field.style.display = 'none';
+                        });
+                        companyNameField.required = false;
+                    }
+                });
+            });
+            
+            // FAQ アコーディオン
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                question.addEventListener('click', function() {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // 全てのFAQを閉じる
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                        otherItem.querySelector('.faq-question i').style.transform = 'rotate(0deg)';
+                    });
+                    
+                    // クリックされたFAQを開く/閉じる
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
