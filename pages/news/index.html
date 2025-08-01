@@ -60,28 +60,44 @@
             </div>
 
             <!-- ニュース記事一覧 -->
-            <div class="news-articles">
+            <div class="news-articles" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
                 <!-- ニュース記事 -->
-                <article class="news-article" data-category="news">
-                    <div class="article-date">2025.08.01</div>
-                    <div class="article-category">ニュース</div>
-                    <h2><a href="detail.html">お盆休みについて</a></h2>
-                    <p class="article-excerpt">誠に勝手ながら、下記期間をお盆休業とさせていただきます。休業期間中にいただいたお問い合わせについては、営業開始日以降に順次対応いたします。</p>
-                    <div class="article-tags">
-                        <span class="tag">お知らせ</span>
-                        <span class="tag">休業</span>
+                <article class="news-card" data-category="news" style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; transition: all 0.3s ease; border: 1px solid #e9ecef;">
+                    <div class="card-header" style="padding: 1.5rem 1.5rem 0.5rem;">
+                        <div class="article-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div class="article-date" style="color: #6c757d; font-size: 0.9rem; font-weight: 500;">2025.08.01</div>
+                            <div class="article-category" style="background: #f8f9fa; color: #495057; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">ニュース</div>
+                        </div>
+                        <h2 style="margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 600; line-height: 1.4;">
+                            <a href="detail.html" style="text-decoration: none; color: #333; transition: color 0.3s ease;">お盆休みについて</a>
+                        </h2>
+                    </div>
+                    <div class="card-body" style="padding: 0 1.5rem 1.5rem;">
+                        <p class="article-excerpt" style="color: #6c757d; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">誠に勝手ながら、下記期間をお盆休業とさせていただきます。休業期間中にいただいたお問い合わせについては、営業開始日以降に順次対応いたします。</p>
+                        <div class="article-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="tag" style="background: #e3f2fd; color: #1976d2; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500;">お知らせ</span>
+                            <span class="tag" style="background: #e8f5e8; color: #4caf50; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500;">休業</span>
+                        </div>
                     </div>
                 </article>
 
-                <article class="news-article" data-category="news">
-                    <div class="article-date">2025.04.01</div>
-                    <div class="article-category">ニュース</div>
-                    <h2><a href="detail.html">転職支援サービス「MediMatch」をリリース</a></h2>
-                    <p class="article-excerpt">医療従事者専門の転職支援サービス「MediMatch」の提供を開始いたします。医療機関と求職者双方のニーズを的確にマッチングし、より良い転職体験を提供します。</p>
-                    <div class="article-tags">
-                        <span class="tag">新サービス</span>
-                        <span class="tag">転職支援</span>
-                        <span class="tag">MediMatch</span>
+                <article class="news-card" data-category="news" style="background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); overflow: hidden; transition: all 0.3s ease; border: 1px solid #e9ecef;">
+                    <div class="card-header" style="padding: 1.5rem 1.5rem 0.5rem;">
+                        <div class="article-meta" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div class="article-date" style="color: #6c757d; font-size: 0.9rem; font-weight: 500;">2025.04.01</div>
+                            <div class="article-category" style="background: #f8f9fa; color: #495057; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500;">ニュース</div>
+                        </div>
+                        <h2 style="margin: 0 0 1rem 0; font-size: 1.3rem; font-weight: 600; line-height: 1.4;">
+                            <a href="detail.html" style="text-decoration: none; color: #333; transition: color 0.3s ease;">転職支援サービス「MediMatch」をリリース</a>
+                        </h2>
+                    </div>
+                    <div class="card-body" style="padding: 0 1.5rem 1.5rem;">
+                        <p class="article-excerpt" style="color: #6c757d; line-height: 1.6; margin-bottom: 1rem; font-size: 0.95rem;">医療従事者専門の転職支援サービス「MediMatch」の提供を開始いたします。医療機関と求職者双方のニーズを的確にマッチングし、より良い転職体験を提供します。</p>
+                        <div class="article-tags" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="tag" style="background: #fff3e0; color: #f57c00; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500;">新サービス</span>
+                            <span class="tag" style="background: #e3f2fd; color: #1976d2; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500;">転職支援</span>
+                            <span class="tag" style="background: #f3e5f5; color: #7b1fa2; padding: 0.25rem 0.5rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500;">MediMatch</span>
+                        </div>
                     </div>
                 </article>
             </div>
@@ -96,27 +112,46 @@
                 <p class="section-subtitle" style="color: #675032; font-weight: 600; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 1rem;">ADDITIONAL INFO</p>
                 <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 1rem;">関連情報</h2>
             </div>
-            <div class="sidebar-content">
-                <div class="popular-articles">
-                    <h3>人気記事</h3>
-                    <ul>
-                        <li><a href="detail.html">お盆休みについて</a></li>
-                        <li><a href="detail.html">転職支援サービス「MediMatch」をリリース</a></li>
+            <div class="sidebar-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div class="info-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; margin-bottom: 1.5rem; border-bottom: 2px solid #675032; padding-bottom: 0.5rem;">人気記事</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #e9ecef;">
+                            <a href="detail.html" style="text-decoration: none; color: #333; font-weight: 500; line-height: 1.4; transition: color 0.3s ease;">お盆休みについて</a>
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <a href="detail.html" style="text-decoration: none; color: #333; font-weight: 500; line-height: 1.4; transition: color 0.3s ease;">転職支援サービス「MediMatch」をリリース</a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="categories">
-                    <h3>カテゴリー</h3>
-                    <ul>
-                        <li><a href="#" data-category="news">ニュース <span>(2)</span></a></li>
+                <div class="info-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; margin-bottom: 1.5rem; border-bottom: 2px solid #675032; padding-bottom: 0.5rem;">カテゴリー</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0;">
+                            <a href="#" data-category="news" style="text-decoration: none; color: #333; font-weight: 500; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; transition: color 0.3s ease;">
+                                ニュース 
+                                <span style="background: #675032; color: white; padding: 0.25rem 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">(2)</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="archive">
-                    <h3>アーカイブ</h3>
-                    <ul>
-                        <li><a href="#">2025年8月 <span>(1)</span></a></li>
-                        <li><a href="#">2025年4月 <span>(1)</span></a></li>
+                <div class="info-card" style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 1.3rem; font-weight: 600; color: #333; margin-bottom: 1.5rem; border-bottom: 2px solid #675032; padding-bottom: 0.5rem;">アーカイブ</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 0.8rem;">
+                            <a href="#" style="text-decoration: none; color: #333; font-weight: 500; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; transition: color 0.3s ease;">
+                                2025年8月 
+                                <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">(1)</span>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <a href="#" style="text-decoration: none; color: #333; font-weight: 500; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; transition: color 0.3s ease;">
+                                2025年4月 
+                                <span style="background: #e9ecef; color: #495057; padding: 0.25rem 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 600;">(1)</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -171,7 +206,7 @@
         // ニュースフィルター機能
         document.addEventListener('DOMContentLoaded', function() {
             const tabBtns = document.querySelectorAll('.tab-btn');
-            const articles = document.querySelectorAll('.news-article');
+            const articles = document.querySelectorAll('.news-card');
 
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
@@ -205,6 +240,32 @@
                     if (targetTab) {
                         targetTab.click();
                     }
+                });
+            });
+
+            // カードのホバーエフェクト
+            const newsCards = document.querySelectorAll('.news-card');
+            newsCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                });
+            });
+
+            // リンクのホバーエフェクト
+            const cardLinks = document.querySelectorAll('.news-card a');
+            cardLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.color = '#675032';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.color = '#333';
                 });
             });
         });
