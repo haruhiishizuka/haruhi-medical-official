@@ -1429,41 +1429,11 @@ section {
 }
 
 .ceo-content {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
-    align-items: start;
-    margin-top: 3rem;
-}
-
-.ceo-photo {
+    max-width: 800px;
+    margin: 3rem auto 0;
     text-align: center;
 }
 
-.photo-placeholder {
-    width: 280px;
-    height: 350px;
-    background: #f8f9fa;
-    border: 2px dashed #cccccc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    color: #666666;
-}
-
-.photo-placeholder i {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: #cccccc;
-}
-
-.photo-placeholder p {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #666666;
-}
 
 .ceo-text h3 {
     color: #1a1a1a;
@@ -1479,6 +1449,8 @@ section {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-size: 1rem;
+    text-align: left;
+    max-width: 100%;
 }
 
 .signature {
@@ -1803,11 +1775,6 @@ section {
         text-align: center;
     }
     
-    .photo-placeholder {
-        width: 250px;
-        height: 300px;
-        margin: 0 auto;
-    }
     
     .overview-row {
         grid-template-columns: 1fr;
