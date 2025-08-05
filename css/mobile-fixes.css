@@ -105,17 +105,57 @@
 @media (max-width: 768px) {
     /* ヒーローセクション調整 */
     .hero {
-        height: 100vh;
-        padding: 80px 1rem 0 1rem !important;
+        min-height: 100vh;
+        padding: 100px 1rem 2rem 1rem !important;
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible !important;
         margin-top: 0 !important;
-        padding-top: 80px !important;
         box-sizing: border-box !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+    }
+    
+    /* 新しいヒーローコンテンツの構造に対応 */
+    .hero-philosophy-section {
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-mission-values {
+        display: block !important;
+        gap: 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .mission-block,
+    .values-block {
+        margin-bottom: 1.5rem !important;
+        padding: 1.5rem !important;
+        border-radius: 15px !important;
+    }
+    
+    .mission-block h3,
+    .values-block h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .mission-block p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .values-list {
+        font-size: 0.85rem !important;
+    }
+    
+    .values-list > div {
+        margin-bottom: 0.6rem !important;
+    }
+    
+    .values-list span {
+        font-size: 0.8rem !important;
     }
     
     .hero-bg-image {
@@ -131,6 +171,44 @@
         text-align: center !important;
         padding: 0 !important;
         margin: 0 !important;
+    }
+    
+    .hero-text {
+        margin: 1.5rem 0 !important;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .hero-text p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-mission h3 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .hero-mission p {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-values h3 {
+        font-size: 0.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .values-text {
+        font-size: 0.85rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .values-text p {
+        margin-bottom: 0.8rem !important;
     }
     
     .hero-title {
@@ -422,11 +500,72 @@
     }
     
     .hero {
-        padding-top: 80px !important;
+        padding: 80px 0.8rem 1.5rem 0.8rem !important;
+    }
+    
+    /* 極小画面用ヒーローコンテンツ調整 */
+    .hero-philosophy-section {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .hero-philosophy-section h2 {
+        font-size: 1.4rem !important;
+    }
+    
+    .hero-philosophy-section p {
+        font-size: 1rem !important;
+    }
+    
+    .mission-block,
+    .values-block {
+        padding: 1.2rem !important;
+        margin-bottom: 1.2rem !important;
+    }
+    
+    .mission-block h3,
+    .values-block h3 {
+        font-size: 0.8rem !important;
+    }
+    
+    .mission-block p {
+        font-size: 0.9rem !important;
+    }
+    
+    .values-list {
+        font-size: 0.8rem !important;
+    }
+    
+    .values-list span {
+        font-size: 0.75rem !important;
     }
     
     .hero-bg-image {
         object-position: 75% center !important;
+    }
+    
+    .hero-text {
+        margin: 1rem 0 !important;
+    }
+    
+    .hero-text h2 {
+        font-size: 1rem !important;
+    }
+    
+    .hero-text p {
+        font-size: 0.8rem !important;
+    }
+    
+    .hero-mission p {
+        font-size: 0.9rem !important;
+    }
+    
+    .values-text {
+        font-size: 0.75rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .values-text p {
+        margin-bottom: 0.6rem !important;
     }
     
     .hero-title {
