@@ -51,13 +51,12 @@
     <!-- お問い合わせフォーム -->
     <section class="contact-form-section">
         <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">CONTACT FORM</p>
-                <h2 class="section-title">お問い合わせフォーム</h2>
-            </div>
+            <h2 class="section-title">お問い合わせフォーム</h2>
+            <p class="section-subtitle">CONTACT FORM</p>
             
             <div class="form-wrapper">
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form" id="contactForm">
+                    
                     <!-- お問い合わせ種別 -->
                     <div class="form-group">
                         <label for="inquiry-type" class="form-label">
@@ -253,10 +252,8 @@
     <!-- よくある質問 -->
     <section class="faq-section">
         <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">FAQ</p>
-                <h2 class="section-title">よくある質問</h2>
-            </div>
+            <h2 class="section-title">よくある質問</h2>
+            <p class="section-subtitle">FAQ</p>
             
             <div class="faq-list">
                 <div class="faq-item">
@@ -320,31 +317,28 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section company-info">
-                    <img src="../images/logo-white.png" alt="株式会社はるひメディカルサービス" class="footer-logo">
-                    <p>医療業界に特化した人材・経営コンサルティングで<br>医療の未来を支えます</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-note"></i></a>
+            <div class="footer-content" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem;">
+                <div class="footer-section company-info" style="flex: 1; max-width: 400px;">
+                    <h3 style="color: white; font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">株式会社はるひメディカルサービス</h3>
+                    <p>医療業界に特化した人材・経営コンサルティングで医療の未来を支えます</p>
+                </div>
+                
+                <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+                    <div class="footer-section" style="text-align: right;">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="about.html">会社概要</a></li>
+                            <li><a href="contact.html">お問い合わせ</a></li>
+                            <li><a href="https://medimatch.jp" target="_blank">Medimatch</a></li>
+                        </ul>
                     </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">会社概要</a></li>
-                        <li><a href="contact.html">お問い合わせ</a></li>
-                        <li><a href="https://medimatch.jp" target="_blank">Medimatch</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> jinji@haruhi-medical.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 愛知県岩倉市大地新町3丁目45番地2</p>
+                    
+                    <div class="footer-section" style="text-align: right;">
+                        <h4>Contact</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> jinji@haruhi-medical.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> 愛知県岩倉市大地新町3丁目45番地2</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -353,21 +347,99 @@
                 <div class="footer-links">
                     <a href="privacy.html">プライバシーポリシー</a>
                     <a href="terms.html">利用規約</a>
-                    <a href="sitemap.html">サイトマップ</a>
                 </div>
                 <p class="copyright">&copy; 2024 株式会社はるひメディカルサービス All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    
     <script src="../js/main.js"></script>
     <script>
-        // フォームの動的表示制御
+        // Slack連携フォーム制御（medimatch-quiz-newと同じ仕組み）
+        async function sendToSlack(formData) {
+            console.log('🔔 sendToSlack called with:', formData);
+
+            try {
+                // api/slack経由で送信（medimatch-quiz-newと同じURL）
+                const functionUrl = '/api/slack';
+                
+                console.log('🌐 Netlify Function経由で送信を試みます:', functionUrl);
+                
+                const response = await fetch(functionUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ formData })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Function呼び出しエラー: ${response.status}`);
+                }
+
+                let result;
+                try {
+                    result = await response.json();
+                } catch (e) {
+                    const text = await response.text();
+                    result = { success: response.ok, message: text };
+                }
+
+                console.log('📊 Slack送信結果:', result);
+
+                if (result.success || response.ok) {
+                    return { success: true };
+                } else {
+                    throw new Error(result.message || '不明なエラー');
+                }
+            } catch (error) {
+                console.error('❌ Slack送信エラー:', error.message);
+                return { success: false, message: error.message };
+            }
+        }
+        
+        // フォーム制御
         document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+                submitBtn.disabled = true;
+                
+                try {
+                    // フォームデータを取得
+                    const formData = new FormData(form);
+                    const data = {};
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+                    
+                    // Slackに送信
+                    const result = await sendToSlack(data);
+                    
+                    if (result.success) {
+                        // 成功ページにリダイレクト
+                        window.location.href = '/pages/contact-success.html';
+                    } else {
+                        throw new Error(result.message || '送信に失敗しました');
+                    }
+                    
+                } catch (error) {
+                    console.error('送信エラー:', error);
+                    alert('送信に失敗しました。しばらく時間をおいて再度お試しください。\n\nお急ぎの場合は、直接メールまたはお電話にてお問い合わせください。\nメール: jinji@haruhi-medical.com');
+                } finally {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
             const clientTypeInputs = document.querySelectorAll('input[name="client-type"]');
             const corporateFields = document.querySelectorAll('.corporate-fields');
             const companyNameField = document.getElementById('company-name');
             
+            // 法人・個人の表示制御
             clientTypeInputs.forEach(input => {
                 input.addEventListener('change', function() {
                     if (this.value === 'corporate') {

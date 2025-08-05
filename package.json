@@ -1,0 +1,16 @@
+{
+  "name": "haruhi-medical-website",
+  "version": "1.0.0",
+  "description": "株式会社はるひメディカルサービス 公式ウェブサイト",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Build complete'",
+    "deploy": "netlify deploy --prod"
+  },
+  "dependencies": {
+    "@slack/web-api": "^6.8.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^15.0.0"
+  }
+}

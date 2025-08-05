@@ -256,9 +256,250 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', handleResize);
 
-    // 外部リンクの処理
-    const externalLinks = document.querySelectorAll('a[target="_blank"]');
-    externalLinks.forEach(link => {
+    // MediMatchリンクの準備中ポップアップ処理
+    const medimatchLinks = document.querySelectorAll('.medimatch-btn, a[href*="medimatch.jp"]');
+    medimatchLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            showComingSoonModal();
+        });
+    });
+
+    // 準備中モーダルを表示する関数
+    function showComingSoonModal() {
+        // モーダルHTML作成
+        const modal = document.createElement('div');
+        modal.className = 'coming-soon-modal';
+        modal.innerHTML = `
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>MediMatch</h3>
+                        <button class="modal-close" aria-label="閉じる">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>準備中です</h4>
+                        <p>転職支援サービス「MediMatch」は現在準備中です。<br>
+                        サービス開始まで今しばらくお待ちください。</p>
+                        <p class="coming-soon-note">
+                            <i class="fas fa-info-circle"></i>
+                            ご質問・ご相談は<a href="pages/contact.html">お問い合わせ</a>からお気軽にどうぞ
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary modal-ok">了解しました</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // モーダルスタイル追加
+        const style = document.createElement('style');
+        style.textContent = `
+            .coming-soon-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10000;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            .modal-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 1rem;
+            }
+            
+            .modal-content {
+                background: white;
+                border-radius: 12px;
+                max-width: 480px;
+                width: 100%;
+                max-height: 90vh;
+                overflow-y: auto;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                animation: slideIn 0.3s ease;
+            }
+            
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1.5rem 2rem 1rem;
+                border-bottom: 1px solid #e2e8f0;
+            }
+            
+            .modal-header h3 {
+                margin: 0;
+                color: #675032;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+            
+            .modal-close {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: #666;
+                cursor: pointer;
+                padding: 0;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                transition: all 0.2s ease;
+            }
+            
+            .modal-close:hover {
+                background: #f7fafc;
+                color: #333;
+            }
+            
+            .modal-body {
+                padding: 2rem;
+                text-align: center;
+            }
+            
+            .modal-icon {
+                font-size: 3rem;
+                color: #f39c12;
+                margin-bottom: 1.5rem;
+            }
+            
+            .modal-body h4 {
+                margin: 0 0 1rem;
+                color: #333;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            
+            .modal-body p {
+                margin: 0 0 1.5rem;
+                color: #666;
+                line-height: 1.6;
+            }
+            
+            .coming-soon-note {
+                background: #f8f9fa;
+                padding: 1rem;
+                border-radius: 8px;
+                border-left: 4px solid #675032;
+                font-size: 0.9rem;
+            }
+            
+            .coming-soon-note i {
+                color: #675032;
+                margin-right: 0.5rem;
+            }
+            
+            .coming-soon-note a {
+                color: #675032;
+                text-decoration: none;
+                font-weight: 600;
+            }
+            
+            .coming-soon-note a:hover {
+                text-decoration: underline;
+            }
+            
+            .modal-footer {
+                padding: 1rem 2rem 2rem;
+                text-align: center;
+            }
+            
+            .modal-ok {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideIn {
+                from { 
+                    opacity: 0;
+                    transform: translateY(-50px) scale(0.9);
+                }
+                to { 
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+            
+            @media (max-width: 640px) {
+                .modal-content {
+                    margin: 1rem;
+                    max-width: calc(100% - 2rem);
+                }
+                
+                .modal-header, .modal-body, .modal-footer {
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                }
+            }
+        `;
+
+        // スタイルとモーダルを追加
+        document.head.appendChild(style);
+        document.body.appendChild(modal);
+        document.body.style.overflow = 'hidden';
+
+        // モーダルを閉じる処理
+        function closeModal() {
+            modal.style.animation = 'fadeOut 0.3s ease forwards';
+            setTimeout(() => {
+                document.body.removeChild(modal);
+                document.head.removeChild(style);
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // イベントリスナー設定
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+        modal.querySelector('.modal-ok').addEventListener('click', closeModal);
+        modal.querySelector('.modal-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Escキーで閉じる
+        const escKeyHandler = function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+                document.removeEventListener('keydown', escKeyHandler);
+            }
+        };
+        document.addEventListener('keydown', escKeyHandler);
+
+        // フェードアウトアニメーション追加
+        const fadeOutStyle = document.createElement('style');
+        fadeOutStyle.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        `;
+        document.head.appendChild(fadeOutStyle);
+    }
+
+    // 外部リンクの処理（MediMatch以外）
+    const otherExternalLinks = document.querySelectorAll('a[target="_blank"]:not(.medimatch-btn):not([href*="medimatch.jp"])');
+    otherExternalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // 外部リンクの確認
             if (this.hostname !== window.location.hostname) {
