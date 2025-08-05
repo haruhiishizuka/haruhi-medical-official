@@ -172,14 +172,14 @@
     }
     
     .service-grid-item {
-        /* ニュースカードと同じスタイル */
-        background: #f8f2e8 !important;
+        /* ニュースカードと同じ配置・余白設定 */
+        background: #ffffff !important;
         padding: 2rem !important;
         border-radius: 15px !important;
-        border-left: 4px solid #d5e6d3 !important;
+        border: 1px solid #e0e0e0 !important;
         margin: 0 !important;
         width: 100% !important;
-        box-shadow: none !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
         overflow: visible !important;
         display: block !important;
         box-sizing: border-box !important;
@@ -194,7 +194,7 @@
     }
     
     .service-english {
-        color: #675032 !important;
+        color: #666666 !important;
         font-weight: 500 !important;
         font-size: 0.85rem !important;
         display: block !important;
@@ -208,7 +208,7 @@
     }
     
     .service-japanese a {
-        color: #675032 !important;
+        color: #333333 !important;
         text-decoration: none !important;
         font-weight: 600 !important;
         font-size: 1.1rem !important;
@@ -216,7 +216,7 @@
     }
     
     .service-text {
-        color: #675032 !important;
+        color: #555555 !important;
         line-height: 1.6 !important;
         font-size: 0.95rem !important;
         /* 見切れ防止 - 全文表示 */
