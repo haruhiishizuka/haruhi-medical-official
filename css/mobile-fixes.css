@@ -44,6 +44,7 @@
 @media (max-width: 768px) {
     .service-content {
         display: block !important;
+        padding: 0 !important;
     }
     
     .service-content .service-grid-items {
@@ -154,7 +155,7 @@
         border-radius: 0 0 12px 12px;
     }
     
-    /* サービスグリッド */
+    /* サービスグリッド - ニュースカードと同じスタイルに統一 */
     .service-section-grid {
         padding: 2rem 1rem !important;
         width: 100% !important;
@@ -162,30 +163,27 @@
     }
     
     .service-grid-items {
+        display: grid !important;
         grid-template-columns: 1fr !important;
         gap: 2rem !important;
         width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
         padding: 0 !important;
-        display: grid !important;
+        margin: 0 !important;
     }
     
     .service-grid-item {
-        padding: 1.5rem !important;
-        margin: 0 0.5rem !important;
-        background: #ffffff !important;
-        border-radius: 12px !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-        width: calc(100% - 1rem) !important;
-        max-width: none !important;
+        /* ニュースカードと同じスタイル */
+        background: #f8f2e8 !important;
+        padding: 2rem !important;
+        border-radius: 15px !important;
+        border-left: 4px solid #d5e6d3 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        box-shadow: none !important;
         overflow: visible !important;
-        overflow-wrap: break-word !important;
-        word-wrap: break-word !important;
         display: block !important;
-        flex-direction: column !important;
-        text-align: left !important;
         box-sizing: border-box !important;
+        transition: transform 0.3s ease !important;
     }
     
     /* サービス内容の要素を縦並びに */
@@ -196,41 +194,42 @@
     }
     
     .service-english {
-        font-size: 0.8rem;
-        display: block;
-        margin-bottom: 0.5rem;
+        color: #675032 !important;
+        font-weight: 500 !important;
+        font-size: 0.85rem !important;
+        display: block !important;
+        margin-bottom: 1rem !important;
     }
     
     .service-japanese {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        line-height: 1.3;
+        margin-bottom: 1rem !important;
         display: block !important;
         width: 100% !important;
     }
     
     .service-japanese a {
+        color: #675032 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
         display: inline !important;
-        color: #675032;
-        text-decoration: none;
     }
     
     .service-text {
-        font-size: 0.9rem;
-        line-height: 1.7;
+        color: #675032 !important;
+        line-height: 1.6 !important;
+        font-size: 0.95rem !important;
         /* 見切れ防止 - 全文表示 */
         overflow: visible !important;
         text-overflow: initial !important;
         display: block !important;
         max-height: none !important;
-        -webkit-box-orient: initial !important;
         white-space: normal !important;
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
         width: 100% !important;
-        max-width: 100% !important;
-        padding-right: 0.5rem !important;
-        hyphens: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
     /* モバイル用のサービス説明を簡潔に */
@@ -276,14 +275,26 @@
     }
     
     /* ニュースセクション */
+    .news-section {
+        padding: 60px 0 !important;
+    }
+    
     .news-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     
     .news-card {
-        padding: 1.5rem;
-        margin: 0 1rem;
+        padding: 1.5rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* サービスセクションもニュースと同じ余白に */
+    .services-overview {
+        padding: 60px 0 !important;
     }
     
     .news-date {
