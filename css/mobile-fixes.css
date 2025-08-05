@@ -118,6 +118,13 @@
         justify-content: center !important;
     }
     
+    .hero-bg-image {
+        object-position: 70% center !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+    
     .hero-content {
         width: 100%;
         max-width: 100%;
@@ -177,17 +184,23 @@
         font-size: 0.95rem;
         line-height: 1.7;
         padding: 0 1rem;
-        word-break: keep-all;
-        overflow-wrap: break-word;
+        word-break: normal !important;
+        overflow-wrap: anywhere !important;
+        text-align: left !important;
+        max-width: 600px;
+        margin: 0 auto;
+        white-space: normal !important;
     }
     
     /* 自然な改行の調整 */
     .section-description br {
-        display: none;
+        display: none !important;
     }
     
     .section-description {
-        white-space: normal;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
     }
     
     /* サービスタブ */
@@ -410,6 +423,10 @@
     
     .hero {
         padding-top: 80px !important;
+    }
+    
+    .hero-bg-image {
+        object-position: 75% center !important;
     }
     
     .hero-title {
