@@ -178,12 +178,15 @@
     .service-text {
         font-size: 0.9rem;
         line-height: 1.7;
-        /* 長いテキストを適切な長さに調整 */
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-height: none; /* 制限を解除して全文表示 */
+        /* 見切れ防止 - 全文表示 */
+        overflow: visible !important;
+        text-overflow: initial !important;
+        display: block !important;
+        max-height: none !important;
+        -webkit-box-orient: initial !important;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     /* モバイル用のサービス説明を簡潔に */
@@ -201,11 +204,31 @@
     .testimonial-content {
         padding: 2rem 1.5rem;
         margin: 0 1rem;
+        overflow: visible !important;
     }
     
     .testimonial-text {
         font-size: 0.95rem;
         line-height: 1.7;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        display: block !important;
+        max-height: none !important;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .testimonial-simple {
+        overflow: visible !important;
+        max-width: 100%;
+    }
+    
+    .testimonial-simple .testimonial-text {
+        overflow: visible !important;
+        text-overflow: initial !important;
+        display: block !important;
+        white-space: normal !important;
     }
     
     /* ニュースセクション */
@@ -284,16 +307,25 @@
         line-height: 1.7;
         word-break: keep-all;
         overflow-wrap: break-word;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        display: block !important;
+        max-height: none !important;
     }
     
     .testimonial-content {
         padding: 1.5rem 1rem;
+        overflow: visible !important;
     }
     
     .testimonial-text {
         line-height: 1.7;
         word-break: keep-all;
         overflow-wrap: break-word;
+        overflow: visible !important;
+        text-overflow: initial !important;
+        display: block !important;
+        max-height: none !important;
     }
     
     .news-card {
