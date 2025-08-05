@@ -16,9 +16,10 @@
     .container {
         width: 100%;
         max-width: 100%;
-        padding: 0 1rem;
+        padding: 0 15px;
         margin: 0 auto;
         overflow-x: hidden;
+        box-sizing: border-box;
     }
 }
 
@@ -157,9 +158,10 @@
     
     /* サービスグリッド - ニュースカードと同じスタイルに統一 */
     .service-section-grid {
-        padding: 2rem 1rem !important;
+        padding: 2rem 15px !important;
         width: 100% !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     .service-grid-items {
@@ -322,10 +324,11 @@
     }
     
     .container {
-        padding: 0 0.75rem;
+        padding: 0 15px;
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
+        box-sizing: border-box;
     }
     
     .hero-title {
