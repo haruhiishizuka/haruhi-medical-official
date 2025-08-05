@@ -1,6 +1,7 @@
 [build]
   functions = "api"
   publish = "."
+  command = "echo 'No build step required'"
 
 [functions]
   node_bundler = "esbuild"
