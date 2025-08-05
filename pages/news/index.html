@@ -162,44 +162,69 @@
     <!-- フッター -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section company-info">
-                    <img src="../../images/logo-white.png" alt="株式会社はるひメディカルサービス" class="footer-logo">
-                    <p>医療業界に特化した人材・経営コンサルティングで<br>医療の未来を支えます</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#"><i class="fab fa-note"></i></a>
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 2rem; align-items: start;">
+                
+                <!-- 会社情報 -->
+                <div>
+                    <h3 style="color: white; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; line-height: 1.4;">株式会社はるひメディカルサービス</h3>
+                    <p style="color: white; line-height: 1.6; margin-bottom: 1.5rem;">医療業界に特化した人材・経営コンサルティングで医療の未来を支えます</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: white;">
+                        <div style="display: flex; align-items: center;"><i class="fas fa-envelope" style="width: 18px; margin-right: 0.75rem;"></i>jinji@haruhi-medical.com</div>
+                        <div style="display: flex; align-items: center;"><i class="fas fa-map-marker-alt" style="width: 18px; margin-right: 0.75rem;"></i>愛知県岩倉市大地新町3丁目45番地2</div>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="../about.html">会社概要</a></li>
-                        <li><a href="../contact.html">お問い合わせ</a></li>
-                        <li><a href="https://medimatch.jp" target="_blank">Medimatch</a></li>
+                <!-- ナビゲーション -->
+                <div>
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600; text-align: center;">Company</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: center;">
+                        <li style="margin-bottom: 0.75rem;"><a href="../about.html" style="color: white; text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">会社概要</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="../contact.html" style="color: white; text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">お問い合わせ</a></li>
+                        <li style="margin-bottom: 0.75rem;"><a href="https://medimatch.jp" target="_blank" style="color: white; text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">MediMatch</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-envelope"></i> jinji@haruhi-medical.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> 愛知県岩倉市大地新町3丁目45番地2</p>
-                    </div>
+                <!-- お問い合わせCTA -->
+                <div style="text-align: center;">
+                    <h4 style="color: white; font-size: 1rem; margin-bottom: 1rem; font-weight: 600;">Contact Us</h4>
+                    <p style="color: white; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.5;">お気軽にご相談ください</p>
+                    <a href="../contact.html" 
+                       style="display: inline-block; background: linear-gradient(135deg, #817d6c, #928c7b); color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 15px rgba(129, 125, 108, 0.3);" 
+                       onmouseover="this.style.background='linear-gradient(135deg, #928c7b, #817d6c)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(129, 125, 108, 0.4)'" 
+                       onmouseout="this.style.background='linear-gradient(135deg, #817d6c, #928c7b)'; this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(129, 125, 108, 0.3)'">
+                        お問い合わせする
+                    </a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-links">
-                    <a href="../privacy.html">プライバシーポリシー</a>
-                    <a href="../terms.html">利用規約</a>
-                    <a href="../sitemap.html">サイトマップ</a>
+            <!-- フッター下部 -->
+            <div style="border-top: 1px solid #4a5568; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; gap: 2rem;">
+                    <a href="../privacy.html" style="color: white; text-decoration: none; font-size: 0.85rem; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">プライバシーポリシー</a>
+                    <a href="../terms.html" style="color: white; text-decoration: none; font-size: 0.85rem; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">利用規約</a>
                 </div>
-                <p class="copyright">&copy; 2024 株式会社はるひメディカルサービス All rights reserved.</p>
+                <p style="margin: 0; color: white; font-size: 0.85rem;">&copy; 2024 株式会社はるひメディカルサービス</p>
             </div>
         </div>
+        
+        <!-- レスポンシブ対応 -->
+        <style>
+            @media (max-width: 768px) {
+                footer .container > div:first-child {
+                    grid-template-columns: 1fr !important;
+                    gap: 2.5rem !important;
+                    text-align: center !important;
+                }
+                footer .container > div:last-child {
+                    flex-direction: column !important;
+                    text-align: center !important;
+                    gap: 1rem !important;
+                }
+                footer .container > div:last-child > div:first-child {
+                    gap: 1.5rem !important;
+                }
+            }
+        </style>
     </footer>
 
     <script src="../../js/main.js"></script>
