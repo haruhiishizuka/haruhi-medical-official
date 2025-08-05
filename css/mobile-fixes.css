@@ -55,6 +55,9 @@
     .section-title {
         font-size: 1.8rem !important;
         margin-bottom: 1rem;
+        line-height: 1.3;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .section-subtitle {
@@ -64,8 +67,19 @@
     
     .section-description {
         font-size: 0.95rem;
-        line-height: 1.6;
+        line-height: 1.7;
         padding: 0 1rem;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+    
+    /* 自然な改行の調整 */
+    .section-description br {
+        display: none;
+    }
+    
+    .section-description {
+        white-space: normal;
     }
     
     /* サービスタブ */
@@ -93,25 +107,48 @@
     /* サービスグリッド */
     .service-grid-items {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     
     .service-grid-item {
         padding: 2rem 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     
     .service-english {
         font-size: 0.8rem;
+        display: block;
+        margin-bottom: 0.5rem;
     }
     
     .service-japanese {
         font-size: 1.2rem;
         margin-bottom: 1rem;
+        line-height: 1.3;
     }
     
     .service-text {
         font-size: 0.9rem;
-        line-height: 1.6;
+        line-height: 1.7;
+        /* 長いテキストを適切な長さに調整 */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: none; /* 制限を解除して全文表示 */
+    }
+    
+    /* モバイル用のサービス説明を簡潔に */
+    .service-text br {
+        display: none; /* 改行を削除 */
+    }
+    
+    .service-text::after {
+        content: "";
+        display: block;
+        margin-top: 1rem;
     }
     
     /* お客様の声 */
@@ -159,14 +196,22 @@
     
     .hero-title {
         font-size: 1.6rem !important;
+        line-height: 1.3;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .hero-subtitle {
         font-size: 0.9rem;
+        line-height: 1.6;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .section-title {
         font-size: 1.6rem !important;
+        line-height: 1.3;
+        word-break: keep-all;
     }
     
     .hero-buttons .btn {
@@ -181,24 +226,50 @@
     
     .service-text {
         font-size: 0.85rem;
+        line-height: 1.7;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .testimonial-content {
         padding: 1.5rem 1rem;
     }
     
+    .testimonial-text {
+        line-height: 1.7;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+    
     .news-card {
         padding: 1.2rem;
+    }
+    
+    .news-card h3 {
+        line-height: 1.4;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+    }
+    
+    .news-card p {
+        line-height: 1.6;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     /* CTA調整 */
     .cta-content h2 {
         font-size: 1.4rem !important;
         line-height: 1.3;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .cta-content p {
         font-size: 0.9rem;
+        line-height: 1.6;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
 }
 
