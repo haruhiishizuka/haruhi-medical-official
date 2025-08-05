@@ -156,36 +156,37 @@
         border-radius: 0 0 12px 12px;
     }
     
-    /* サービスグリッド - ニュースカードと同じスタイルに統一 */
+    /* サービスグリッド - 完全1列表示で中央寄せ */
     .service-section-grid {
         padding: 2rem 15px !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        text-align: center !important;
     }
     
     .service-grid-items {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        display: block !important;  /* gridではなくblockで確実に1列 */
         width: 100% !important;
         padding: 0 !important;
-        margin: 0 !important;
+        margin: 0 auto !important;
+        max-width: 500px !important;  /* カードの最大幅を制限して中央寄せ */
     }
     
     .service-grid-item {
-        /* ニュースカードと同じ配置・余白設定 */
+        /* カードデザインと中央配置 */
         background: #ffffff !important;
-        padding: 2rem !important;
+        padding: 1.5rem !important;
         border-radius: 15px !important;
         border: 1px solid #e0e0e0 !important;
-        margin: 0 !important;
+        margin: 0 0 1.5rem 0 !important;  /* 下マージンのみ */
         width: 100% !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
         overflow: visible !important;
         display: block !important;
         box-sizing: border-box !important;
-        transition: transform 0.3s ease !important;
+        transition: all 0.3s ease !important;
+        text-align: left !important;  /* カード内は左寄せ */
     }
     
     /* サービス内容の要素を縦並びに */
@@ -222,17 +223,37 @@
         color: #555555 !important;
         line-height: 1.6 !important;
         font-size: 0.95rem !important;
-        /* 見切れ防止 - 全文表示 */
-        overflow: visible !important;
-        text-overflow: initial !important;
+        /* 折りたたみ対応 */
         display: block !important;
-        max-height: none !important;
         white-space: normal !important;
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+        position: relative !important;
+        max-height: 100px !important;  /* 初期表示は3-4行程度 */
+        overflow: hidden !important;
+        transition: max-height 0.3s ease !important;
+    }
+    
+    .service-text.expanded {
+        max-height: none !important;  /* 展開時は全文表示 */
+        overflow: visible !important;
+    }
+    
+    /* 続きを読むボタン */
+    .read-more-btn {
+        display: inline-block !important;
+        margin-top: 0.5rem !important;
+        color: #675032 !important;
+        font-size: 0.9rem !important;
+        cursor: pointer !important;
+        text-decoration: underline !important;
+        background: none !important;
+        border: none !important;
+        padding: 0.25rem 0 !important;
+        font-weight: 500 !important;
     }
     
     /* モバイル用のサービス説明を簡潔に */
