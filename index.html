@@ -340,51 +340,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // モバイル用サービステキストの折りたたみ機能
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.innerWidth <= 768) {
-                const serviceTexts = document.querySelectorAll('.service-text');
-                
-                serviceTexts.forEach(function(text) {
-                    // テキストが長い場合のみ「続きを読む」ボタンを追加
-                    if (text.scrollHeight > 100) {
-                        const readMoreBtn = document.createElement('button');
-                        readMoreBtn.className = 'read-more-btn';
-                        readMoreBtn.textContent = '続きを読む';
-                        
-                        // ボタンをテキストの後に追加
-                        text.parentNode.insertBefore(readMoreBtn, text.nextSibling);
-                        
-                        // クリックイベント
-                        readMoreBtn.addEventListener('click', function() {
-                            if (text.classList.contains('expanded')) {
-                                text.classList.remove('expanded');
-                                this.textContent = '続きを読む';
-                            } else {
-                                text.classList.add('expanded');
-                                this.textContent = '閉じる';
-                            }
-                        });
-                    }
-                });
-            }
-        });
-        
-        // ウィンドウリサイズ時の処理
-        window.addEventListener('resize', function() {
-            const buttons = document.querySelectorAll('.read-more-btn');
-            if (window.innerWidth > 768) {
-                // PC表示時は折りたたみを解除
-                buttons.forEach(btn => btn.style.display = 'none');
-                document.querySelectorAll('.service-text').forEach(text => {
-                    text.classList.add('expanded');
-                });
-            } else {
-                // モバイル表示時は折りたたみを有効化
-                buttons.forEach(btn => btn.style.display = 'inline-block');
-            }
-        });
-    </script>
 </body>
 </html>
