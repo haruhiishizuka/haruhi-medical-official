@@ -194,11 +194,12 @@
     }
     
     .service-english {
-        color: #666666 !important;
-        font-weight: 500 !important;
+        color: #59ad20 !important;
+        font-weight: 600 !important;
         font-size: 0.85rem !important;
         display: block !important;
         margin-bottom: 1rem !important;
+        letter-spacing: 0.1em !important;
     }
     
     .service-japanese {
