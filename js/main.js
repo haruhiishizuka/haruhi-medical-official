@@ -26,20 +26,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
+    console.log('Hamburger:', hamburger);
+    console.log('NavMenu:', navMenu);
+    
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        console.log('ハンバーガーメニューの要素が見つかりました');
+        
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('ハンバーガーメニューがクリックされました');
+            
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
+            
+            console.log('Nav menu active:', navMenu.classList.contains('active'));
+            console.log('Hamburger active:', hamburger.classList.contains('active'));
         });
 
         // メニュー項目クリック時にメニューを閉じる
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                console.log('メニューリンクがクリックされました');
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             });
         });
+    } else {
+        console.log('ハンバーガーメニューの要素が見つかりません');
     }
 
     // スムーススクロール
