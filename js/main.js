@@ -1,6 +1,27 @@
 // DOM読み込み完了後に実行
 document.addEventListener('DOMContentLoaded', function() {
     
+    // 英語テキストの一文字ずつアニメーション
+    function animateText() {
+        const quoteElement = document.getElementById('animated-quote');
+        if (quoteElement) {
+            const text = quoteElement.textContent;
+            quoteElement.innerHTML = '';
+            
+            // 各文字を span で囲む
+            text.split('').forEach((char, index) => {
+                const span = document.createElement('span');
+                span.classList.add('char');
+                span.textContent = char;
+                span.style.animationDelay = `${index * 0.05}s`;
+                quoteElement.appendChild(span);
+            });
+        }
+    }
+    
+    // ページ読み込み後少し遅らせてアニメーション開始
+    setTimeout(animateText, 1000);
+    
     // ハンバーガーメニューの処理
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');

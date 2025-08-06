@@ -186,6 +186,153 @@ body {
     overflow: hidden;
 }
 
+/* Canvaスタイルのヒーローセクション */
+.hero.canva-style {
+    background: url('../images/MediMatch.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0;
+    min-height: 100vh;
+    height: auto;
+}
+
+.hero.canva-style .hero-content {
+    max-width: 800px;
+    text-align: center;
+    color: #000000;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero-main-quote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    margin: 0;
+    opacity: 0.3;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.quote-text {
+    font-size: 3.5rem;
+    font-style: normal;
+    color: #888888;
+    margin: 0;
+    font-family: 'Allura', cursive;
+    line-height: 1.2;
+    font-weight: 400;
+    transform: rotate(-1deg);
+    white-space: nowrap;
+}
+
+.quote-text .char {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInChar 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeInChar {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-philosophy {
+    margin-bottom: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.philosophy-title {
+    font-size: 5rem;
+    color: #000000;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+    white-space: nowrap;
+}
+
+.hero-main-message {
+    margin-bottom: 4rem;
+}
+
+.main-message {
+    font-size: 2.2rem;
+    color: #000000;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.main-message .highlight {
+    color: #59ad20;
+    font-weight: 500;
+}
+
+/* Canvaスタイルのレスポンシブ対応 */
+@media (max-width: 768px) {
+    .hero.canva-style {
+        padding: 80px 15px 60px;
+    }
+    
+    .philosophy-title {
+        font-size: 2rem;
+    }
+    
+    .main-message {
+        font-size: 1.8rem;
+    }
+    
+    .quote-text {
+        font-size: 1.3rem;
+    }
+    
+    .hero-main-quote,
+    .hero-philosophy,
+    .hero-main-message {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero.canva-style {
+        padding: 70px 10px 50px;
+    }
+    
+    .philosophy-title {
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+    
+    .main-message {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+    
+    .quote-text {
+        font-size: 1.1rem;
+    }
+    
+    .quote-author {
+        font-size: 1rem;
+    }
+}
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -440,6 +587,96 @@ section {
     font-size: 1.1rem;
     color: #675032;
     margin-bottom: 3rem;
+}
+
+/* ミッションセクション */
+.mission-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.mission-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.mission-subtitle {
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 3rem;
+    font-weight: 300;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-text {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color: #333333;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* INSIGHT セクション */
+.insight-section {
+    margin-top: 80px;
+}
+
+.insight-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+}
+
+.insight-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.insight-item {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 1rem;
+}
+
+.insight-icon {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    display: block;
+}
+
+.insight-item p {
+    font-size: 0.95rem;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .insight-icons {
+        justify-content: center;
+    }
+    
+    .insight-item {
+        min-width: 120px;
+        max-width: 150px;
+    }
 }
 
 /* サービス概要 */
