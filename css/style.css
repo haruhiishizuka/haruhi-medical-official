@@ -296,9 +296,9 @@ body {
 /* Canvaスタイルのレスポンシブ対応 */
 @media (max-width: 768px) {
     .hero.canva-style {
-        padding: 100px 15px 60px;
-        min-height: 80vh;
-        background-size: auto 70vh;
+        padding: 100px 15px 30px;
+        min-height: 60vh;
+        background-size: auto 50vh;
         background-position: center right;
     }
     
@@ -358,9 +358,9 @@ body {
 
 @media (max-width: 480px) {
     .hero.canva-style {
-        padding: 90px 10px 50px;
-        min-height: 100vh;
-        background-size: auto 80vh;
+        padding: 90px 10px 20px;
+        min-height: 70vh;
+        background-size: auto 60vh;
         background-position: center right;
         background-attachment: scroll;
     }
