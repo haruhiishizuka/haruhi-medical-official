@@ -191,9 +191,9 @@ body {
 .hero.canva-style {
     background: url('../images/MediMatch.png');
     background-size: contain;
-    background-position: center center;
+    background-position: center top;
     background-repeat: no-repeat;
-    padding: 40px 0;
+    padding: 120px 0 40px;
     min-height: 100vh;
     height: auto;
     background-attachment: fixed;
@@ -290,10 +290,10 @@ body {
 /* Canvaスタイルのレスポンシブ対応 */
 @media (max-width: 768px) {
     .hero.canva-style {
-        padding: 80px 15px 60px;
+        padding: 100px 15px 60px;
         min-height: 80vh;
         background-size: contain;
-        background-position: center center;
+        background-position: center top;
     }
     
     .philosophy-title {
@@ -351,10 +351,10 @@ body {
 
 @media (max-width: 480px) {
     .hero.canva-style {
-        padding: 70px 10px 50px;
+        padding: 90px 10px 50px;
         min-height: 100vh;
         background-size: contain;
-        background-position: center center;
+        background-position: center top;
         background-attachment: scroll;
     }
     
