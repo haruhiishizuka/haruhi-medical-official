@@ -5740,10 +5740,20 @@ section {
         transition: 0.3s;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         padding: 2rem 0;
+        z-index: 999;
     }
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
     }
     
     .medimatch-btn {
