@@ -213,7 +213,7 @@ body {
     margin: 0;
     position: absolute;
     top: 20%;
-    left: 20px;
+    left: 101px;
     z-index: 2;
 }
 
@@ -328,7 +328,7 @@ body {
         text-align: left;
         position: absolute;
         top: 15%;
-        left: 15px;
+        left: 96px;
         right: 15px;
     }
     
@@ -389,7 +389,7 @@ body {
         padding: 1rem 0;
         position: absolute;
         top: 12%;
-        left: 15px;
+        left: 96px;
         right: 15px;
         text-align: left;
     }
