@@ -213,7 +213,7 @@ body {
     margin: 0;
     position: absolute;
     top: 20%;
-    left: 5%;
+    left: 20px;
     z-index: 2;
 }
 
@@ -324,12 +324,12 @@ body {
     }
     
     .hero-content {
-        padding: 2rem 1rem;
+        padding: 2rem 0;
         text-align: left;
         position: absolute;
         top: 15%;
-        left: 5%;
-        right: 5%;
+        left: 15px;
+        right: 15px;
     }
     
     /* ミッション・バリューセクション */
@@ -386,11 +386,11 @@ body {
     }
     
     .hero-content {
-        padding: 1rem;
+        padding: 1rem 0;
         position: absolute;
         top: 12%;
-        left: 5%;
-        right: 5%;
+        left: 15px;
+        right: 15px;
         text-align: left;
     }
     
