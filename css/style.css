@@ -400,6 +400,15 @@ body {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
+    /* サービスタブをスマホで非表示 */
+    .service-tabs {
+        display: none;
+    }
+    
+    .service-content {
+        display: block !important;
+    }
+    
     /* ミッション・バリューセクション */
     .mission-section {
         padding: 40px 10px;
