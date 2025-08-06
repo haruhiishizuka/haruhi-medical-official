@@ -288,48 +288,114 @@ body {
 @media (max-width: 768px) {
     .hero.canva-style {
         padding: 80px 15px 60px;
+        min-height: 80vh;
     }
     
     .philosophy-title {
-        font-size: 2rem;
-    }
-    
-    .main-message {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+        white-space: normal;
+        line-height: 1.3;
     }
     
     .quote-text {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
     
-    .hero-main-quote,
-    .hero-philosophy,
-    .hero-main-message {
-        margin-bottom: 3rem;
+    .hero-main-quote {
+        position: relative;
+        transform: none;
+        margin-top: 2rem;
+        opacity: 0.5;
+    }
+    
+    /* ミッション・バリューセクション */
+    .mission-section {
+        padding: 60px 15px;
+    }
+    
+    .mission-title, .insight-title {
+        font-size: 2rem;
+    }
+    
+    .mission-text {
+        font-size: 1.3rem;
+        white-space: normal;
+        line-height: 1.6;
+    }
+    
+    .insight-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    
+    .insight-item {
+        max-width: 300px;
+    }
+    
+    .insight-icon {
+        width: 150px;
+        height: 150px;
     }
 }
 
 @media (max-width: 480px) {
     .hero.canva-style {
         padding: 70px 10px 50px;
+        min-height: 100vh;
     }
     
     .philosophy-title {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
         line-height: 1.4;
-    }
-    
-    .main-message {
-        font-size: 1.5rem;
-        line-height: 1.5;
+        white-space: normal;
     }
     
     .quote-text {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
+        white-space: normal;
     }
     
-    .quote-author {
-        font-size: 1rem;
+    /* ミッション・バリューセクション */
+    .mission-section {
+        padding: 40px 10px;
+    }
+    
+    .mission-title, .insight-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .mission-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+    
+    .mission-text {
+        font-size: 1.1rem;
+        white-space: normal;
+        line-height: 1.5;
+        padding: 0 10px;
+    }
+    
+    .insight-section {
+        margin-top: 50px;
+    }
+    
+    .insight-item {
+        max-width: 250px;
+        padding: 0.5rem;
+    }
+    
+    .insight-icon {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+    
+    .insight-item p {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 }
 
@@ -593,15 +659,21 @@ section {
 .mission-section {
     padding: 80px 0;
     background-color: #ffffff;
+    background-image: url('../images/backk.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
 .mission-title {
     font-size: 3rem;
-    font-weight: 700;
     color: #000000;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     margin-bottom: 1rem;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
 .mission-subtitle {
@@ -622,6 +694,8 @@ section {
     color: #333333;
     font-weight: 400;
     letter-spacing: 0.05em;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+    white-space: nowrap;
 }
 
 /* INSIGHT セクション */
@@ -630,11 +704,13 @@ section {
 }
 
 .insight-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
     color: #000000;
-    letter-spacing: 0.1em;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     margin-bottom: 3rem;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
 .insight-icons {
