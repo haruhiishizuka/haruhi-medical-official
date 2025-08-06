@@ -712,6 +712,7 @@ section {
     line-height: 1.8;
     color: #333333;
     margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
 @media (max-width: 768px) {
