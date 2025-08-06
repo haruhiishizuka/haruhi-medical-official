@@ -197,7 +197,7 @@ body {
 .hero.canva-style {
     background: url('../images/MediMatch.png');
     background-size: auto 90vh;
-    background-position: center right;
+    background-position: center center;
     background-repeat: no-repeat;
     padding: 120px 0 40px;
     min-height: 100vh;
@@ -299,7 +299,7 @@ body {
         padding: 100px 15px 30px;
         min-height: 60vh;
         background-size: auto 50vh;
-        background-position: center right;
+        background-position: center center;
     }
     
     .philosophy-title {
