@@ -190,7 +190,7 @@ body {
 /* Canvaスタイルのヒーローセクション */
 .hero.canva-style {
     background: url('../images/MediMatch.png');
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     padding: 40px 0;
@@ -292,7 +292,7 @@ body {
     .hero.canva-style {
         padding: 80px 15px 60px;
         min-height: 80vh;
-        background-size: cover;
+        background-size: contain;
         background-position: center center;
     }
     
@@ -353,7 +353,7 @@ body {
     .hero.canva-style {
         padding: 70px 10px 50px;
         min-height: 100vh;
-        background-size: cover;
+        background-size: contain;
         background-position: center center;
         background-attachment: scroll;
     }
