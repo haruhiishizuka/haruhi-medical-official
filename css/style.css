@@ -267,6 +267,7 @@ body {
     margin: 0;
     font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
     white-space: nowrap;
+    text-align: left;
 }
 
 .hero-main-message {
