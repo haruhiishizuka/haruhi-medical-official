@@ -393,9 +393,9 @@ body {
     /* ヒーローセクションのモバイル最適化 - 背景全体表示 */
     .hero.canva-style {
         padding: 0;                  /* paddingを完全撤廃 */
-        height: 80vh;                /* 画像の縦横比に合わせて高さ調整 */
-        background-color: white;     /* 余白部分を白に変更 */
-        background-size: contain;    /* 背景全体をスマホに収める */
+        height: 100vh;               /* 画面全体を占有 */
+        background-image: url('../images/smartphone_back.png'); /* スマホ専用背景画像 */
+        background-size: cover;      /* 画面全体を覆う */
         background-position: center center; /* 中央配置 */
         background-repeat: no-repeat; /* 繰り返しなし */
         background-attachment: scroll;
