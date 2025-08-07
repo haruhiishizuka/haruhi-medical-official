@@ -533,6 +533,37 @@ body {
         line-height: 1.5;
         font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif !important;
     }
+    
+    /* Footer モバイル対応 */
+    footer .container > div:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+        text-align: center !important;
+    }
+    footer .container > div:last-child {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+    }
+    footer .container > div:last-child > div:first-child {
+        gap: 1.5rem !important;
+    }
+    /* 全ての要素を中央揃え */
+    footer h3, footer h4, footer p, footer div {
+        text-align: center !important;
+    }
+    footer .fa-envelope, footer .fa-map-marker-alt {
+        margin: 0 auto !important;
+        display: inline-block !important;
+    }
+    footer div[style*="display: flex"] {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    /* モバイル版で非表示にする要素（メールアドレスと住所） */
+    footer div[style*="display: flex; flex-direction: column; gap: 0.75rem"] {
+        display: none !important;
+    }
 }
 
 .hero-bg {
