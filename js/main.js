@@ -26,34 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
     
-    console.log('Hamburger:', hamburger);
-    console.log('NavMenu:', navMenu);
-    
     if (hamburger && navMenu) {
-        console.log('ハンバーガーメニューの要素が見つかりました');
-        
         hamburger.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('ハンバーガーメニューがクリックされました');
-            
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
-            
-            console.log('Nav menu active:', navMenu.classList.contains('active'));
-            console.log('Hamburger active:', hamburger.classList.contains('active'));
         });
 
         // メニュー項目クリック時にメニューを閉じる
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                console.log('メニューリンクがクリックされました');
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             });
         });
-    } else {
-        console.log('ハンバーガーメニューの要素が見つかりません');
     }
 
     // スムーススクロール
@@ -77,17 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ヒーローセクションのタブ切り替え
-    const heroTabs = document.querySelectorAll('.hero-tab');
-
-    heroTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            // タブのアクティブ状態を切り替え
-            heroTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
     // サービスタブ切り替え
     const serviceTabs = document.querySelectorAll('.service-tab');
     const serviceContents = document.querySelectorAll('.service-content');
@@ -106,82 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // 数字カウントアップアニメーション
-    function countUp(element, target, duration = 2000) {
-        let start = 0;
-        const increment = target / (duration / 16);
-        
-        function updateCount() {
-            start += increment;
-            if (start < target) {
-                element.textContent = Math.floor(start);
-                requestAnimationFrame(updateCount);
-            } else {
-                element.textContent = target;
-            }
-        }
-        updateCount();
-    }
-
-    // 実績セクションのカウントアップ
-    const achievementNumbers = document.querySelectorAll('.achievement-number');
-    const achievementsSection = document.querySelector('.achievements');
-    
-    if (achievementsSection) {
-        const achievementsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    achievementNumbers.forEach(number => {
-                        const target = parseInt(number.getAttribute('data-target'));
-                        countUp(number, target);
-                    });
-                    achievementsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        achievementsObserver.observe(achievementsSection);
-    }
-
-    // お客様の声スライダー
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentSlide = 0;
-
-    function showSlide(index) {
-        testimonialItems.forEach((item, i) => {
-            item.classList.toggle('active', i === index);
-        });
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        });
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % testimonialItems.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + testimonialItems.length) % testimonialItems.length;
-        showSlide(currentSlide);
-    }
-
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            showSlide(currentSlide);
-        });
-    });
-
-    // 自動スライド（5秒間隔）
-    setInterval(nextSlide, 5000);
 
     // ニュースタブ切り替え
     const tabBtns = document.querySelectorAll('.tab-btn');
@@ -202,92 +102,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // スクロール時のアニメーション
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, observerOptions);
-
-    // アニメーション対象要素を監視
-    const animateElements = document.querySelectorAll(
-        '.service-category, .news-card, .achievement-item, .testimonial-content'
-    );
-    animateElements.forEach(el => {
-        el.classList.add('animate-on-scroll');
-        observer.observe(el);
-    });
-
     // ヘッダーのスクロール時の背景変更
     const header = document.querySelector('.header');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.backdropFilter = 'blur(15px)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        }
-    });
-
-    // カードホバーエフェクト
-    const cards = document.querySelectorAll('.service-category, .news-card');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(15px)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            }
         });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-
-    // ページ読み込み時のアニメーション
-    window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
-        
-        // ヒーローコンテンツのアニメーション
-        const heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            heroContent.style.opacity = '0';
-            heroContent.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                heroContent.style.transition = 'all 1.2s ease';
-                heroContent.style.opacity = '1';
-                heroContent.style.transform = 'translateY(0)';
-            }, 300);
-        }
-    });
-
-    // ユーティリティ関数
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
     }
 
     // リサイズ時の処理
-    const handleResize = debounce(function() {
+    function handleResize() {
         // モバイル表示時にメニューを閉じる
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 768 && navMenu && hamburger) {
             navMenu.classList.remove('active');
             hamburger.classList.remove('active');
         }
-    }, 250);
+    }
 
     window.addEventListener('resize', handleResize);
 
@@ -477,6 +313,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
             
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+            
             @media (max-width: 640px) {
                 .modal-content {
                     margin: 1rem;
@@ -520,31 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         document.addEventListener('keydown', escKeyHandler);
-
-        // フェードアウトアニメーション追加
-        const fadeOutStyle = document.createElement('style');
-        fadeOutStyle.textContent = `
-            @keyframes fadeOut {
-                from { opacity: 1; }
-                to { opacity: 0; }
-            }
-        `;
-        document.head.appendChild(fadeOutStyle);
     }
-
-    // 外部リンクの処理（MediMatch以外）
-    const otherExternalLinks = document.querySelectorAll('a[target="_blank"]:not(.medimatch-btn):not([href*="medimatch.jp"])');
-    otherExternalLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // 外部リンクの確認
-            if (this.hostname !== window.location.hostname) {
-                e.preventDefault();
-                if (confirm('外部サイトに移動します。よろしいですか？')) {
-                    window.open(this.href, '_blank', 'noopener,noreferrer');
-                }
-            }
-        });
-    });
 
     // フォームの基本バリデーション（Contactページ用）
     const forms = document.querySelectorAll('form');
@@ -569,78 +386,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // パフォーマンス最適化：画像の遅延読み込み
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    if (img.dataset.src) {
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                    }
-                    if (img.loading === 'lazy') {
-                        img.classList.add('loaded');
-                    }
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-
-        // data-src を使う遅延読み込み画像
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => imageObserver.observe(img));
+    // ページ読み込み時のアニメーション
+    window.addEventListener('load', function() {
+        document.body.classList.add('loaded');
         
-        // loading="lazy" を使う画像
-        const lazyLoadingImages = document.querySelectorAll('img[loading="lazy"]');
-        lazyLoadingImages.forEach(img => imageObserver.observe(img));
-    } else {
-        // IntersectionObserverをサポートしていない場合のフォールバック
-        const lazyLoadingImages = document.querySelectorAll('img[loading="lazy"]');
-        lazyLoadingImages.forEach(img => img.classList.add('loaded'));
-    }
-
-    // スクロールトップボタン（必要に応じて追加）
-    function createScrollTopButton() {
-        const scrollBtn = document.createElement('button');
-        scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-        scrollBtn.className = 'scroll-top-btn';
-        scrollBtn.style.cssText = `
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: #667eea;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1000;
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        `;
-
-        document.body.appendChild(scrollBtn);
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollBtn.style.opacity = '1';
-                scrollBtn.style.visibility = 'visible';
-            } else {
-                scrollBtn.style.opacity = '0';
-                scrollBtn.style.visibility = 'hidden';
-            }
-        });
-
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
-    // スクロールトップボタンを有効にする場合はコメントアウト
-    // createScrollTopButton();
+        // ヒーローコンテンツのアニメーション
+        const heroContent = document.querySelector('.hero-content');
+        if (heroContent) {
+            heroContent.style.opacity = '0';
+            heroContent.style.transform = 'translateY(50px)';
+            
+            setTimeout(() => {
+                heroContent.style.transition = 'all 1.2s ease';
+                heroContent.style.opacity = '1';
+                heroContent.style.transform = 'translateY(0)';
+            }, 300);
+        }
+    });
 });
