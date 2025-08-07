@@ -401,26 +401,25 @@ body {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
-    /* ヒーローセクションのモバイル最適化 */
+    /* ヒーローセクションのモバイル最適化 - Grid中央配置 */
     .hero.canva-style {
-        padding: 100px 15px 60px;
-        min-height: 70vh;
+        padding: 0 15px;             /* 上下paddingを撤廃 */
+        min-height: 100vh;           /* 画面全体を占有 */
         background-size: cover;
         background-position: right 70%; /* 女性の頭が見えるように下げる */
         background-attachment: scroll;
-        display: flex;
-        align-items: center;
-        justify-content: center; /* 中央配置 */
+        display: grid;               /* Grid で完全中央寄せ */
+        place-items: center;
     }
     
     .hero-content {
         padding: 2rem 1rem;
         background: rgba(255, 255, 255, 0.9);
         border-radius: 15px;
-        margin: 0;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         width: 100%;
         max-width: 320px;
+        margin: 0;                   /* Grid 中央なので margin 要らず */
         text-align: center; /* テキスト中央配置 */
     }
     
