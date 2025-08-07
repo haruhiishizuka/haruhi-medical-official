@@ -435,11 +435,7 @@ body {
     }
     
     .quote-text {
-        font-size: 0.85rem !important;
-        opacity: 0.7 !important;
-        margin-top: 1rem !important;
-        font-style: italic !important;
-        text-align: center !important; /* 明示的に中央配置 */
+        display: none !important; /* スマホでは英語引用文を非表示 */
     }
 
     /* サービスタブをスマホで非表示 */
