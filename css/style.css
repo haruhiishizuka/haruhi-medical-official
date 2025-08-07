@@ -473,6 +473,20 @@ body {
         display: none !important;
     }
     
+    /* サービス画像をスマホで表示 */
+    .service-image-section {
+        display: block !important;
+        text-align: center !important;
+        margin: 2rem 0 !important;
+    }
+    
+    .service-image {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
     /* スマホ版では両方のサービスコンテンツを表示 */
     .services-overview .service-content {
         display: block !important;
