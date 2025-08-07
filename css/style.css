@@ -390,12 +390,14 @@ body {
     
     /* 480px: .hero-content設定は768pxで統一するため削除 */
     
-    /* ヒーローセクションのモバイル最適化 - PC版設定統一 */
+    /* ヒーローセクションのモバイル最適化 - 背景全体表示 */
     .hero.canva-style {
         padding: 0;                  /* paddingを完全撤廃 */
-        min-height: 100vh;           /* 画面全体を占有 */
-        background-size: auto 90vh;  /* PC版と同じスケール */
-        background-position: center center; /* PC版と同じ位置 */
+        height: 80vh;                /* 画像の縦横比に合わせて高さ調整 */
+        background-color: white;     /* 余白部分を白に変更 */
+        background-size: contain;    /* 背景全体をスマホに収める */
+        background-position: center center; /* 中央配置 */
+        background-repeat: no-repeat; /* 繰り返しなし */
         background-attachment: scroll;
         display: grid;               /* Grid で完全中央寄せ */
         place-items: center;
@@ -404,12 +406,12 @@ body {
     /* モバイル専用ヒーローコンテンツ - 干渉を完全に排除 */
     .hero.canva-style .hero-content {
         padding: 2rem 1rem !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        border-radius: 15px !important;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        background: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
         max-width: 320px !important;
         margin: 0 auto !important;   /* 強制的に中央化 */
-        text-align: center !important;
+        text-align: left !important;
         position: static !important; /* 絶対配置を無効 */
         left: auto !important;
         right: auto !important;
@@ -423,7 +425,7 @@ body {
         color: #333333 !important;
         font-weight: 700 !important;
         white-space: normal !important;
-        text-align: center !important; /* 明示的に中央配置 */
+        text-align: left !important; /* 左揃え */
     }
     
     .quote-text {
