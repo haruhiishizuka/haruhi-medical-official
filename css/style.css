@@ -184,6 +184,11 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* ヒーロー動画背景 */
+.hero-video-mobile {
+    display: none;
+}
+
 /* ヒーローセクション */
 .hero {
     position: relative;
@@ -365,6 +370,35 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* セクション間の余白を縮小 */
+    section {
+        padding: 2rem 0 !important;
+    }
+    
+    .philosophy-section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .mission-section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .services-overview {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .testimonials {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .news-section {
+        padding: 2.5rem 0 !important;
+    }
+    
+    .cta-section {
+        padding: 3rem 0 !important;
+    }
+    
     .hero.canva-style {
         padding: 90px 15px 20px;
         min-height: 100vh;
@@ -394,38 +428,39 @@ body {
     .hero.canva-style {
         padding: 0;                  /* paddingを完全撤廃 */
         height: 100vh;               /* 画面全体を占有 */
-        background-image: url('../images/smartphone_back.png'); /* スマホ専用背景画像 */
+        background-image: none;      /* 背景画像を無効化（動画に置き換え） */
         background-size: cover;      /* 画面全体を覆う */
         background-position: center center; /* 中央配置 */
         background-repeat: no-repeat; /* 繰り返しなし */
         background-attachment: scroll;
         display: grid;               /* Grid で完全中央寄せ */
         place-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* モバイル版で動画を表示 */
+    .hero-video-mobile {
+        display: block !important;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1;
+        object-fit: cover;
     }
     
     /* モバイル専用ヒーローコンテンツ - 干渉を完全に排除 */
     .hero.canva-style .hero-content {
-        padding: 2rem 1rem !important;
-        background: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        max-width: 320px !important;
-        margin: 0 auto !important;   /* 強制的に中央化 */
-        text-align: left !important;
-        position: static !important; /* 絶対配置を無効 */
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
+        display: none !important; /* 動画にタイトルが入っているため非表示 */
     }
     
     .philosophy-title {
-        font-size: 1.3rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
-        color: #333333 !important;
-        font-weight: 700 !important;
-        white-space: normal !important;
-        text-align: left !important; /* 左揃え */
+        display: none !important; /* スマホ版では非表示 */
     }
     
     .quote-text {
@@ -465,13 +500,16 @@ body {
     .mission-subtitle {
         font-size: 0.9rem;
         margin-bottom: 2rem;
+        font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif !important;
     }
     
     .mission-text {
-        font-size: 1.1rem;
-        white-space: normal;
-        line-height: 1.5;
-        padding: 0 10px;
+        font-size: 0.95rem !important;
+        white-space: normal !important;
+        line-height: 1.5 !important;
+        padding: 0 20px !important;
+        text-align: center !important;
+        font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif !important;
     }
     
     .insight-section {
@@ -492,6 +530,7 @@ body {
     .insight-item p {
         font-size: 0.85rem;
         line-height: 1.5;
+        font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif !important;
     }
 }
 
@@ -850,6 +889,7 @@ section {
     color: #666666;
     margin-bottom: 3rem;
     font-weight: 300;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
 .mission-content {
@@ -910,6 +950,7 @@ section {
     color: #333333;
     line-height: 1.6;
     margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
 /* レスポンシブ対応 */
@@ -1877,17 +1918,67 @@ section {
         padding: 60px 0 !important;
     }
     
+    .news-section .container {
+        padding: 0 15px !important;
+    }
+    
     .news-grid {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
         padding: 0 !important;
         margin: 0 !important;
+        width: 100% !important;
     }
     
     .news-card {
         padding: 1.5rem !important;
         margin: 0 !important;
         width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* ニュース一覧ページのカード修正 */
+    .news-articles {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 0 !important;
+    }
+    
+    .news-articles .news-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    .card-header {
+        padding: 1rem !important;
+    }
+    
+    .card-body {
+        padding: 0 1rem 1rem !important;
+    }
+    
+    .article-meta {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.5rem !important;
+    }
+    
+    .article-excerpt {
+        font-size: 0.9rem !important;
+    }
+    
+    .article-tags {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.3rem !important;
+    }
+    
+    .tag {
+        font-size: 0.7rem !important;
+        padding: 0.2rem 0.4rem !important;
     }
     
     /* お客様の声のモバイル対応 */
