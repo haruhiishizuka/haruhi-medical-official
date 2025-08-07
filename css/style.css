@@ -77,7 +77,7 @@ body {
     align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .nav-menu {
         display: flex;
     }
@@ -301,7 +301,7 @@ body {
 }
 
 /* Canvaスタイルのレスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .hero.canva-style {
         padding: 100px 15px 30px;
         min-height: 60vh;
@@ -368,7 +368,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* セクション間の余白を縮小 */
     section {
         padding: 2rem 0 !important;
@@ -435,15 +435,13 @@ body {
     .hero-video-mobile {
         display: block !important;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: -1;
         object-fit: cover;
+        object-position: center;
     }
     
     /* モバイル専用ヒーローコンテンツ - 干渉を完全に排除 */
@@ -890,7 +888,7 @@ section {
     font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .philosophy-section-title {
         font-size: 2rem;
         margin-bottom: 2rem;
@@ -906,7 +904,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .philosophy-section-title {
         font-size: 1.8rem !important;
         line-height: 1.3;
@@ -1012,7 +1010,7 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .insight-icons {
         justify-content: center;
         flex-direction: column;
@@ -1337,7 +1335,7 @@ section {
 }
 
 /* サービスセクション レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .service-tabs {
         flex-direction: column;
         align-items: center;
@@ -1826,7 +1824,7 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* 基本設定 */
     html, body {
         overflow-x: hidden;
@@ -2219,7 +2217,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .container {
         padding: 0 15px;
     }
@@ -2663,7 +2661,7 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .page-title {
         font-size: 2.5rem;
     }
@@ -2704,7 +2702,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .page-title {
         font-size: 2rem;
     }
@@ -3476,7 +3474,7 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .category-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -3520,7 +3518,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .process-step {
         min-width: auto;
         width: 100%;
@@ -4025,7 +4023,7 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .contact-hero .hero-title {
         font-size: 2.5rem;
     }
@@ -4074,7 +4072,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .contact-methods,
     .contact-form-section,
     .office-info,
@@ -5205,7 +5203,7 @@ section {
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .featured-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -5272,7 +5270,7 @@ section {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .article-meta-bottom {
         flex-direction: column;
         gap: 1rem;
@@ -6155,5 +6153,143 @@ section {
     color: white;
     text-align: center;
     padding: 4rem 0;
+}
+
+/* タブレットサイズ対応 (768px-1023px) - PC版を縮小表示 */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* ヒーロー動画は非表示、PC版背景画像を使用 */
+    .hero-video-mobile {
+        display: none !important;
+    }
+    
+    /* PC版のヒーローコンテンツを表示 */
+    .hero.canva-style .hero-content {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .philosophy-title {
+        display: block !important;
+        font-size: 2rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .quote-text {
+        display: block !important;
+        font-size: 1.2rem !important;
+    }
+    
+    /* コンテナを調整 */
+    .container {
+        padding: 0 2rem;
+        max-width: 95%;
+    }
+    
+    /* フォントサイズを全体的に調整 */
+    .section-title {
+        font-size: 2rem !important;
+    }
+    
+    .service-main-title {
+        font-size: 1.8rem !important;
+    }
+    
+    /* サービスタブは表示 */
+    .services-overview .service-tabs {
+        display: flex !important;
+    }
+    
+    /* サービスコンテンツは通常通りタブ切り替え */
+    .services-overview .service-content {
+        display: none !important;
+    }
+    
+    .services-overview .service-content.active {
+        display: block !important;
+    }
+    
+    .services-overview .service-content#user {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        border-top: none !important;
+    }
+}
+
+/* 超小画面デバイス対応 (iPhone SE, 古いAndroid) */
+@media screen and (max-width: 375px) {
+    .hero-video-mobile {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+        transform: none;
+    }
+    
+    .hero {
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+/* 中画面スマホ対応 (iPhone 12, 13) */
+@media screen and (min-width: 376px) and (max-width: 414px) {
+    .hero-video-mobile {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* 大画面スマホ対応 (iPhone Pro Max, Galaxy Note等) */
+@media screen and (min-width: 415px) and (max-width: 667px) {
+    .hero-video-mobile {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+/* 横向きスマホ対応 */
+@media screen and (max-width: 667px) and (orientation: landscape) {
+    .hero-video-mobile {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+    }
 }
 
