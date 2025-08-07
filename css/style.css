@@ -401,12 +401,12 @@ body {
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
-    /* ヒーローセクションのモバイル最適化 - Grid中央配置 */
+    /* ヒーローセクションのモバイル最適化 - PC版設定統一 */
     .hero.canva-style {
-        padding: 0 15px;             /* 上下paddingを撤廃 */
+        padding: 0;                  /* paddingを完全撤廃 */
         min-height: 100vh;           /* 画面全体を占有 */
-        background-size: cover;
-        background-position: right 70%; /* 女性の頭が見えるように下げる */
+        background-size: auto 90vh;  /* PC版と同じスケール */
+        background-position: center center; /* PC版と同じ位置 */
         background-attachment: scroll;
         display: grid;               /* Grid で完全中央寄せ */
         place-items: center;
@@ -417,10 +417,9 @@ body {
         background: rgba(255, 255, 255, 0.9);
         border-radius: 15px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 320px;
-        margin: 0;                   /* Grid 中央なので margin 要らず */
-        text-align: center; /* テキスト中央配置 */
+        max-width: 320px;            /* 幅指定のみ */
+        margin: 0 auto;              /* 左右auto中央化 */
+        text-align: center;
     }
     
     .philosophy-title {
