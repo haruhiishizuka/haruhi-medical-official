@@ -388,18 +388,7 @@ body {
         opacity: 0.8;
     }
     
-    .hero-content {
-        padding: 2rem 1rem;
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        margin: 2rem 1rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
+    /* 480px: .hero-content設定は768pxで統一するため削除 */
     
     /* ヒーローセクションのモバイル最適化 - PC版設定統一 */
     .hero.canva-style {
@@ -412,14 +401,19 @@ body {
         place-items: center;
     }
     
-    .hero-content {
-        padding: 2rem 1rem;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        max-width: 320px;            /* 幅指定のみ */
-        margin: 0 auto;              /* 左右auto中央化 */
-        text-align: center;
+    /* モバイル専用ヒーローコンテンツ - 干渉を完全に排除 */
+    .hero.canva-style .hero-content {
+        padding: 2rem 1rem !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;   /* 強制的に中央化 */
+        text-align: center !important;
+        position: static !important; /* 絶対配置を無効 */
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
     }
     
     .philosophy-title {
@@ -581,7 +575,8 @@ body {
     background: linear-gradient(135deg, rgba(233, 236, 231, 0.7), rgba(233, 236, 231, 0.5));
 }
 
-.hero-content {
+/* 汎用 .hero-content - モバイルヒーロー以外に適用 */
+.hero-content:not(.hero.canva-style .hero-content) {
     position: relative;
     z-index: 1;
     text-align: left;
