@@ -212,14 +212,11 @@ body {
 }
 
 .hero.canva-style .hero-content {
-    max-width: 800px;
-    text-align: left;
+    max-width: 1000px;
+    text-align: center;
     color: #000000;
     padding: 0;
     margin: 0;
-    position: absolute;
-    top: 20%;
-    left: 101px;
     z-index: 2;
 }
 
@@ -274,7 +271,7 @@ body {
 }
 
 .philosophy-title {
-    font-size: 3.75rem;
+    font-size: 2.5rem;
     color: #000000;
     font-weight: 400;
     line-height: 1.2;
@@ -282,7 +279,8 @@ body {
     margin: 0;
     font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
     white-space: nowrap;
-    text-align: left;
+    text-align: center;
+    transform: translateY(-20px);
 }
 
 .hero-main-message {
@@ -312,9 +310,10 @@ body {
     }
     
     .philosophy-title {
-        font-size: 1.875rem;
+        font-size: 1.8rem;
         white-space: normal;
         line-height: 1.3;
+        text-align: center;
     }
     
     .quote-text {
@@ -329,13 +328,13 @@ body {
         opacity: 0.9;
     }
     
-    .hero-content {
+    .hero.canva-style .hero-content {
         padding: 2rem 0;
-        text-align: left;
-        position: absolute;
-        top: 15%;
-        left: 96px;
-        right: 15px;
+        text-align: center;
+        position: static;
+        transform: none;
+        max-width: 800px;
+        width: 100%;
     }
     
     /* ミッション・バリューセクション */
@@ -401,11 +400,18 @@ body {
     }
     
     .hero.canva-style {
-        padding: 90px 15px 20px;
-        min-height: 100vh;
-        background-size: auto 90vh;
+        padding: 0;
+        height: 100vh;
+        background-image: none;
+        background-size: cover;
         background-position: center center;
+        background-repeat: no-repeat;
         background-attachment: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
     }
     
     .philosophy-title {
@@ -424,21 +430,6 @@ body {
     }
     
     /* 480px: .hero-content設定は768pxで統一するため削除 */
-    
-    /* ヒーローセクションのモバイル最適化 - 背景全体表示 */
-    .hero.canva-style {
-        padding: 0;                  /* paddingを完全撤廃 */
-        height: 100vh;               /* 画面全体を占有 */
-        background-image: none;      /* 背景画像を無効化（動画に置き換え） */
-        background-size: cover;      /* 画面全体を覆う */
-        background-position: center center; /* 中央配置 */
-        background-repeat: no-repeat; /* 繰り返しなし */
-        background-attachment: scroll;
-        display: grid;               /* Grid で完全中央寄せ */
-        place-items: center;
-        position: relative;
-        overflow: hidden;
-    }
     
     /* モバイル版で動画を表示 */
     .hero-video-mobile {
@@ -482,9 +473,13 @@ body {
     
     .service-image {
         max-width: 100% !important;
+        width: 100% !important;
         height: auto !important;
+        min-height: 200px !important;
         display: block !important;
         margin: 0 auto !important;
+        object-fit: cover !important;
+        background-color: #f0f0f0 !important;
     }
     
     /* スマホ版では両方のサービスコンテンツを表示 */
@@ -771,9 +766,13 @@ body {
 
 .service-image {
     max-width: 100%;
+    width: 100%;
     height: auto;
+    min-height: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    object-fit: cover;
 }
 
 .testimonial-simple {
@@ -855,6 +854,16 @@ section {
 
 .philosophy-quote {
     margin: 2rem 0;
+}
+
+.japanese-quote {
+    font-size: 1.5rem;
+    color: #666666;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Yu Kyokasho Light', 'Hiragino Mincho ProN', 'Yu Mincho', 'Noto Serif JP', serif;
+    transform: translateY(-40px);
 }
 
 .quote-text-large {
@@ -1171,12 +1180,6 @@ section {
     font-size: 0.9rem;
     line-height: 1.7;
     color: #666666;
-}
-
-.service-image-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .service-logo {
