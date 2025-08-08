@@ -1942,18 +1942,23 @@ section {
         gap: 0.5rem !important;
     }
     
-    .service-grid-item {
+    .service-grid-items .service-grid-item {
         margin: 0 0 0.5rem 0 !important;
-        padding: 0.75rem 0.5rem !important;
+        padding: 0.5rem !important;
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box;
+        box-sizing: border-box !important;
         word-wrap: break-word;
         overflow-wrap: break-word;
         background: #ffffff !important;
         border-radius: 8px !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
         border: 1px solid #f0f0f0 !important;
+    }
+    
+    .service-content .service-grid-items .service-grid-item {
+        margin: 0 0 0.5rem 0 !important;
+        padding: 0.5rem !important;
     }
     
     .service-english {
@@ -1968,12 +1973,24 @@ section {
         line-height: 1.3 !important;
     }
     
-    .service-text {
+    .service-grid-items .service-grid-item .service-text {
         padding: 0 !important;
         margin: 0 !important;
         line-height: 1.4 !important;
         font-size: 0.85rem !important;
         color: #555 !important;
+    }
+    
+    .service-grid-items .service-grid-item .service-japanese {
+        font-size: 1rem !important;
+        margin-bottom: 0.4rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .service-grid-items .service-grid-item .service-english {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.2rem !important;
+        display: block !important;
     }
     
     /* サービスセクション全体の調整 */
