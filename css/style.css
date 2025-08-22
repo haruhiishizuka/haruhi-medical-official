@@ -1686,7 +1686,8 @@ section {
 
 /* ニュースセクション */
 .news-section {
-    background: #ffffff;
+    background: #f8f9f7;
+    padding: 80px 0;
 }
 
 .news-tabs {
