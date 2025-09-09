@@ -75,6 +75,22 @@ body {
     text-decoration: none;
 }
 
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo-img:hover {
+    opacity: 0.8;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -85,6 +101,10 @@ body {
 @media (max-width: 767px) {
     .nav-menu {
         display: flex;
+    }
+    
+    .logo-img {
+        height: 35px;
     }
 }
 
