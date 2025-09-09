@@ -59,7 +59,7 @@ body {
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .navbar .container {
@@ -81,10 +81,11 @@ body {
 }
 
 .logo-img {
-    height: 40px;
-    width: auto;
+    height: 60px !important;
+    width: auto !important;
     display: block;
     transition: opacity 0.3s ease;
+    object-fit: contain;
 }
 
 .logo-img:hover {
@@ -104,7 +105,12 @@ body {
     }
     
     .logo-img {
-        height: 35px;
+        height: 45px !important;
+        width: auto !important;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
     }
 }
 
