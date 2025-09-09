@@ -127,7 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', handleResize);
 
-    // MediMatchリンクの準備中ポップアップ処理
+    // MediMatchリンクの準備中ポップアップ処理（一時無効化）
+    /*
     const medimatchLinks = document.querySelectorAll('.medimatch-btn, a[href*="medimatch.jp"]');
     medimatchLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showComingSoonModal();
         });
     });
+    */
 
     // 準備中モーダルを表示する関数
     function showComingSoonModal() {
