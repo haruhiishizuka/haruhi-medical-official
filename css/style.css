@@ -2087,7 +2087,7 @@ section {
     }
     
     .medimatch-btn {
-        display: none;
+        display: flex;
     }
     
     .logo-text {
