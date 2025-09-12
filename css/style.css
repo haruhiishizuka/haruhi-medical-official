@@ -243,6 +243,42 @@ body {
     will-change: transform;
 }
 
+/* PC版での背景画像を確実に表示 */
+@media (min-width: 768px) {
+    .hero.canva-style {
+        background-image: url('../images/MediMatch.png') !important;
+        background-size: contain; /* 画像全体を表示 */
+        background-position: center center; /* 中央配置 */
+        background-repeat: no-repeat;
+        background-color: #fff; /* 背景色を白に */
+        padding: 40px 0;
+        min-height: 600px; /* 最小高さ */
+        height: calc(100vh - 80px); /* ヘッダーを除いた画面全体 */
+    }
+    
+    /* PC版では画像タグを非表示 */
+    .hero-image-pc {
+        display: none !important;
+    }
+    
+    /* PC版では文言を非表示 */
+    .hero-philosophy.mobile-only {
+        display: none !important;
+    }
+}
+
+/* モバイル版でのみ文言を表示 */
+@media (max-width: 767px) {
+    .hero-philosophy.mobile-only {
+        display: block;
+    }
+    
+    /* モバイル版では画像を非表示 */
+    .hero-image-pc {
+        display: none !important;
+    }
+}
+
 .hero.canva-style .hero-content {
     max-width: 1000px;
     text-align: center;
@@ -434,7 +470,7 @@ body {
     .hero.canva-style {
         padding: 0;
         height: 100vh;
-        background-image: none;
+        background-image: none !important; /* モバイルのみ背景画像なし */
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;

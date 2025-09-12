@@ -10,6 +10,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GML9E589HY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // 本番環境用設定
+        gtag('config', 'G-GML9E589HY');
+    </script>
+    
+    <!-- GA4 カスタムトラッキング -->
+    <script src="js/ga-tracking.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -41,18 +55,19 @@
         </nav>
     </header>
 
-    <section id="home" class="hero canva-style hero-desktop-mini">
+    <section id="home" class="hero canva-style hero-desktop-mini" style="margin-top: 80px;">
         <!-- モバイル用動画背景 -->
         <video class="hero-video-mobile" autoplay muted loop playsinline preload="metadata">
             <source src="images/movietop1.mp4" type="video/mp4">
         </video>
         
         <div class="hero-content">
-            <div class="hero-philosophy">
+            <!-- PC版用画像 -->
+            <img src="images/MediMatch.png" alt="MediMatch" class="hero-image-pc" style="display: none;">
+            <!-- モバイル版用文言 -->
+            <div class="hero-philosophy mobile-only">
                 <h1 class="philosophy-title">医療機関の課題を根本診断し、<br>現場に伴走してウェルビーイング経営へ導くパートナー。</h1>
             </div>
-            
-            
         </div>
     </section>
 

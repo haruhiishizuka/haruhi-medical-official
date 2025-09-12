@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>GA4テスト</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GML9E589HY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-GML9E589HY', {
+            'debug_mode': true
+        });
+        
+        // ページ読み込み後にテストイベント送信
+        window.addEventListener('load', function() {
+            console.log('GA4 Test Page Loaded');
+            console.log('dataLayer:', window.dataLayer);
+            
+            // テストイベント送信
+            gtag('event', 'page_view_test', {
+                'page_title': 'Test Page',
+                'page_location': window.location.href
+            });
+            console.log('Test event sent!');
+        });
+    </script>
+</head>
+<body>
+    <h1>Google Analytics 4 テストページ</h1>
+    <p>このページはGA4の動作確認用です。</p>
+    <button onclick="gtag('event', 'click', {'event_category': 'test', 'event_label': 'button_click'}); console.log('Button click event sent!');">
+        テストイベントを送信
+    </button>
+    
+    <h2>確認方法：</h2>
+    <ol>
+        <li>デベロッパーツール（F12）を開く</li>
+        <li>Consoleタブでメッセージを確認</li>
+        <li>NetworkタブでGoogleへの通信を確認</li>
+        <li>上のボタンをクリックしてイベント送信</li>
+    </ol>
+</body>
+</html>
