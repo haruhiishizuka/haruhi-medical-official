@@ -162,7 +162,7 @@ body {
 
 .dropdown-menu a:hover {
     background-color: #2a2a2a;
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 /* Medimatchボタン */
@@ -364,7 +364,7 @@ body {
 }
 
 .main-message .highlight {
-    color: #59ad20;
+    color: #a0d05a;
     font-weight: 500;
 }
 
@@ -795,7 +795,7 @@ body {
 }
 
 .hero-title .highlight {
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .hero .hero-subtitle {
@@ -946,7 +946,7 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #59ad20, #6bc02a);
+    background: linear-gradient(90deg, #a0d05a, #b5dc7d);
     border-radius: 2px;
     box-shadow: none;
 }
@@ -989,7 +989,7 @@ section {
 
 .quote-text-large {
     font-size: 2rem;
-    color: #59ad20;
+    color: #a0d05a;
     font-style: italic;
     margin-bottom: 2rem;
     font-family: 'Allura', cursive;
@@ -1223,7 +1223,7 @@ section {
 
 .service-tab.active {
     color: #333333;
-    border-bottom-color: #59ad20;
+    border-bottom-color: #a0d05a;
     font-weight: 600;
 }
 
@@ -1295,7 +1295,7 @@ section {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: #59ad20;
+    color: #a0d05a;
     margin-bottom: 1rem;
 }
 
@@ -1315,7 +1315,7 @@ section {
 }
 
 .service-japanese a:hover {
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .service-japanese a::after {
@@ -1384,7 +1384,7 @@ section {
 }
 
 .service-detailed-list li i {
-    color: #59ad20;
+    color: #a0d05a;
     margin-right: 1rem;
     width: 20px;
 }
@@ -1398,7 +1398,7 @@ section {
 }
 
 .service-item-link:hover {
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .service-additional {
@@ -1448,7 +1448,7 @@ section {
 }
 
 .service-detailed-list li i {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.2rem;
     margin-right: 1rem;
     width: 20px;
@@ -1544,7 +1544,7 @@ section {
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #59ad20, #6bc02a);
+    background: linear-gradient(135deg, #a0d05a, #b5dc7d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1583,7 +1583,7 @@ section {
 }
 
 .service-list i {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 0.9rem;
 }
 
@@ -1596,7 +1596,7 @@ section {
 }
 
 .achievements .section-title {
-    color: #59ad20;
+    color: #a0d05a;
     text-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
 }
 
@@ -2323,7 +2323,7 @@ section {
     }
     
     .service-english {
-        color: #59ad20 !important;
+        color: #a0d05a !important;
         font-weight: 600 !important;
         font-size: 0.85rem !important;
         display: block !important;
@@ -5578,12 +5578,12 @@ section {
 .filter-tab:hover {
     background: rgba(0, 255, 204, 0.1);
     border-color: rgba(0, 255, 204, 0.3);
-    color: #59ad20;
+    color: #a0d05a;
     transform: translateY(-2px);
 }
 
 .filter-tab.active {
-    background: linear-gradient(135deg, #59ad20, #6bc02a);
+    background: linear-gradient(135deg, #a0d05a, #b5dc7d);
     border-color: #8b7355;
     color: #0a0a0a;
     font-weight: 600;
@@ -5629,7 +5629,7 @@ section {
 .case-image .image-placeholder i {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .case-category-badge {
@@ -5695,7 +5695,7 @@ section {
     display: block;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #59ad20;
+    color: #a0d05a;
     margin-bottom: 0.25rem;
 }
 
@@ -5713,7 +5713,7 @@ section {
 
 .tag {
     background: rgba(0, 255, 204, 0.1);
-    color: #59ad20;
+    color: #a0d05a;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -5725,7 +5725,7 @@ section {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #59ad20;
+    color: #a0d05a;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -5768,7 +5768,7 @@ section {
 .stat-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #59ad20, #6bc02a);
+    background: linear-gradient(135deg, #a0d05a, #b5dc7d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5781,7 +5781,7 @@ section {
 .stat-number {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #59ad20;
+    color: #a0d05a;
     margin-bottom: 0.5rem;
 }
 
@@ -5855,7 +5855,7 @@ section {
 
 .case-subtitle {
     font-size: 1rem;
-    color: #59ad20;
+    color: #a0d05a;
     margin-bottom: 2rem;
     line-height: 1.6;
 }
@@ -5887,7 +5887,7 @@ section {
 
 .case-location i,
 .case-business i {
-    color: #59ad20;
+    color: #a0d05a;
     width: 16px;
 }
 
@@ -5897,7 +5897,7 @@ section {
 
 .case-comment .quote-icon {
     font-size: 1.5rem;
-    color: #59ad20;
+    color: #a0d05a;
     margin-bottom: 1rem;
 }
 
@@ -5927,7 +5927,7 @@ section {
 }
 
 .author-info h4 {
-    color: #59ad20;
+    color: #a0d05a;
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
@@ -6015,7 +6015,7 @@ section {
 }
 
 .content-section .section-title {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
@@ -6066,7 +6066,7 @@ section {
 }
 
 .challenge-content h3 {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
@@ -6104,7 +6104,7 @@ section {
 .timeline-marker {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #59ad20, #6bc02a);
+    background: linear-gradient(135deg, #a0d05a, #b5dc7d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -6123,7 +6123,7 @@ section {
 }
 
 .timeline-content h3 {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
@@ -6171,7 +6171,7 @@ section {
 }
 
 .result-item h3 {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
@@ -6215,7 +6215,7 @@ section {
 .author-avatar {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #59ad20, #6bc02a);
+    background: linear-gradient(135deg, #a0d05a, #b5dc7d);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -6238,7 +6238,7 @@ section {
 }
 
 .sidebar-section h3 {
-    color: #59ad20;
+    color: #a0d05a;
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -6292,7 +6292,7 @@ section {
 .service-link:hover {
     background: rgba(0, 255, 204, 0.1);
     border-color: rgba(0, 255, 204, 0.3);
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .sidebar-cta {
@@ -6346,7 +6346,7 @@ section {
 
 .case-card .case-image .image-placeholder i {
     font-size: 2rem;
-    color: #59ad20;
+    color: #a0d05a;
 }
 
 .case-card .case-content {
