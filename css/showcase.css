@@ -1,0 +1,211 @@
+/* ========================================
+   Showcase Card Design Styles
+   事業案内ショーケースカードデザイン
+   ======================================== */
+
+/* Container */
+.showcase-container {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+
+/* Card Base */
+.showcase-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    padding: 80px 0;
+}
+
+/* Reverse Layout (画像右側) */
+.showcase-card.showcase-reverse {
+    grid-template-columns: 1fr 1.1fr;
+}
+
+.showcase-card.showcase-reverse .showcase-image-wrapper {
+    order: 2;
+}
+
+.showcase-card.showcase-reverse .showcase-content {
+    order: 1;
+}
+
+/* Image Wrapper */
+.showcase-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Accent Background */
+.showcase-accent {
+    position: absolute;
+    width: 72%;
+    height: 78%;
+    top: 14%;
+    right: -10%;
+    border-radius: 8px;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.showcase-card.showcase-reverse .showcase-accent {
+    right: auto;
+    left: -10%;
+}
+
+/* Image */
+.showcase-image {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 4px;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    background: #f0f0f0; /* プレースホルダー背景 */
+    border: 1px solid #e0e0e0; /* 枠線 */
+}
+
+.showcase-card:hover .showcase-image {
+    transform: scale(1.02);
+}
+
+.showcase-card:hover .showcase-accent {
+    transform: scale(1.05);
+}
+
+/* Content */
+.showcase-content {
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Vertical Tag */
+.showcase-tag {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Title */
+.showcase-title {
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #333;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+}
+
+/* Description */
+.showcase-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* MORE Link - Hidden */
+.showcase-more {
+    display: none;
+}
+
+/* ========================================
+   Responsive Design
+   レスポンシブ対応
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .showcase-card {
+        gap: 40px;
+        padding: 60px 0;
+    }
+
+    .showcase-title {
+        font-size: 36px;
+    }
+
+    .showcase-tag {
+        left: -30px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .showcase-container {
+        padding: 0 16px;
+    }
+
+    .showcase-card,
+    .showcase-card.showcase-reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 40px 0;
+    }
+
+    .showcase-card.showcase-reverse .showcase-image-wrapper,
+    .showcase-card.showcase-reverse .showcase-content {
+        order: 0;
+    }
+
+    .showcase-image {
+        height: 280px;
+    }
+
+    .showcase-accent {
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        right: -8%;
+    }
+
+    .showcase-card.showcase-reverse .showcase-accent {
+        left: -8%;
+    }
+
+    .showcase-content {
+        padding: 0;
+    }
+
+    .showcase-tag {
+        display: none;
+    }
+
+    .showcase-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .showcase-description {
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .showcase-title {
+        font-size: 28px;
+    }
+
+    .showcase-image {
+        height: 240px;
+    }
+
+    .showcase-accent {
+        width: 85%;
+        height: 75%;
+    }
+}

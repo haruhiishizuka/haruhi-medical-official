@@ -1,0 +1,167 @@
+/* ========================================
+   Tab Showcase Styles
+   タブ切り替えショーケーススタイル
+   ======================================== */
+
+/* Tab Container */
+.tab-showcase-wrapper {
+    background: #fff;
+    padding: 80px 0;
+}
+
+/* Tab Buttons */
+.service-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-tab-btn {
+    flex: 1;
+    padding: 20px 40px;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.05em;
+}
+
+.service-tab-btn:hover {
+    color: #666;
+}
+
+.service-tab-btn.active {
+    color: #333;
+}
+
+.service-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #817d6c, #928c7b);
+    transition: all 0.3s ease;
+}
+
+/* Tab Content */
+.service-tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.service-tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Header inside Tab */
+.tab-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.tab-section-title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.tab-section-subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.tab-section-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .service-tab-btn {
+        padding: 18px 30px;
+        font-size: 16px;
+    }
+
+    .tab-section-title {
+        font-size: 36px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .tab-showcase-wrapper {
+        padding: 60px 0;
+    }
+
+    .service-tabs {
+        margin-bottom: 40px;
+    }
+
+    .service-tab-btn {
+        padding: 16px 20px;
+        font-size: 15px;
+    }
+
+    .tab-section-header {
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+
+    .tab-section-title {
+        font-size: 32px;
+    }
+
+    .tab-section-subtitle {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .tab-section-description {
+        font-size: 14px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .service-tab-btn {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .tab-section-title {
+        font-size: 28px;
+    }
+}

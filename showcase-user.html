@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求職者向けサービス - ショーケース</title>
+    <link rel="stylesheet" href="css/showcase.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2 class="section-title">求職者向けサービス</h2>
+        <p class="section-subtitle">FOR JOB SEEKERS</p>
+        <p class="section-description">
+            医療従事者の理想的なキャリア実現をサポート。<br>
+            単なる転職支援ではなく、長期的なキャリア形成を見据えた包括的なサービスを提供いたします。
+        </p>
+    </div>
+
+    <!-- Showcase Cards -->
+    <div class="showcase-container">
+        <!-- Card 1: Positive Career -->
+        <section class="showcase-card">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #FF6B9D;"></div>
+                <img src="images/service.png" alt="ポジティブ転職支援" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Positive Career</div>
+                <h3 class="showcase-title">ポジティブ<br>転職支援</h3>
+                <p class="showcase-description">自己理解を深める「哲学的対話」とポジティブ心理学に基づくストレングス診断で、まずは心の視界をクリアに。価値観・強み・理想の働き方を言語化し、その軸に合った医療機関や職種を厳選してご提案します。<br><br>応募書類の棚卸しから面接前のメンタルトレーニング、入職後のフォロー面談まで寄り添い、転職を「挑戦」ではなく「成長」の機会へ導きます。</p>
+                <a href="#positive-career" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 2: Career Development -->
+        <section class="showcase-card showcase-reverse">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #6EC1E4;"></div>
+                <img src="images/service.png" alt="キャリア開発サポート" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Career Development</div>
+                <h3 class="showcase-title">キャリア開発<br>サポート</h3>
+                <p class="showcase-description">いまの経験・価値観と「5年後、10年後にどうありたいか」をじっくり言語化し、あなた専用のキャリアロードマップを設計します。必要な実務経験や役割を具体化したうえで、その軸に合う医療機関やポジションを厳選。<br><br>応募書類のストーリーづくりや面接での伝え方、条件交渉のポイントまで並走し、内定獲得までをフルサポートします。</p>
+                <a href="#career-development" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 3: Career Assessment -->
+        <section class="showcase-card">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #A78BFA;"></div>
+                <img src="images/service.png" alt="キャリアタイプ診断" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Career Assessment</div>
+                <h3 class="showcase-title">キャリアタイプ<br>診断</h3>
+                <p class="showcase-description">独自の診断ツールで、あなたの適性と志向性を分析。最適なキャリアパスをご提案します。医療業界での経験を活かしながら、あなたらしいキャリアの可能性を発見できます。</p>
+                <a href="https://medimatch-quiz-new.netlify.app/" target="_blank" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div style="height: 100px;"></div>
+</body>
+</html>

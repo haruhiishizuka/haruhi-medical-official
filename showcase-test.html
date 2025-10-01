@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事業案内ショーケース - テスト</title>
+    <link rel="stylesheet" href="css/showcase.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            letter-spacing: 3px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .section-description {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2 class="section-title">事業案内</h2>
+        <p class="section-subtitle">SERVICE</p>
+        <p class="section-description">
+            医療業界に特化した人材紹介・経営コンサルティングを提供。<br>
+            医療機関の経営支援から医療従事者のキャリア支援まで、<br>
+            トータルソリューションで医療業界の発展に貢献します。
+        </p>
+    </div>
+
+    <!-- Showcase Cards -->
+    <div class="showcase-container">
+        <!-- Card 1: Management -->
+        <section class="showcase-card">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #9AD84C;"></div>
+                <img src="images/service.png" alt="医療機関経営コンサルティング" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Management</div>
+                <h3 class="showcase-title">医療機関経営<br>コンサルティング</h3>
+                <p class="showcase-description">財務・運営・スタッフ配置までを立体的に捉え、数字に映らない組織文化や現場の空気感までも一枚の「経営カルテ」に整理。ともに課題解決を行います。代表への電話相談は24時間365日対応。</p>
+                <a href="#management" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 2: Recruitment -->
+        <section class="showcase-card showcase-reverse">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #81C8D9;"></div>
+                <img src="images/service.png" alt="有料職業紹介事業" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Recruitment</div>
+                <h3 class="showcase-title">有料職業<br>紹介事業</h3>
+                <p class="showcase-description">医療現場を熟知したコンサルタントが、全国の病院・クリニック・薬局と専門職を結ぶ "メディカル・タレントハブ"。求人票の条件だけでなく、組織カルチャーや診療科の将来像、地域医療のニーズまで解析し、真にフィットする配置を導きます。</p>
+                <a href="https://medimatch-quiz-new.netlify.app/" target="_blank" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 3: Promotion -->
+        <section class="showcase-card">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #F4A460;"></div>
+                <img src="images/service.png" alt="HP制作・SNS運用代行" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Promotion</div>
+                <h3 class="showcase-title">HP制作・<br>SNS運用代行</h3>
+                <p class="showcase-description">"ただ発信する" だけでは届かない時代。医療機関の理念や専門性を言語化し、患者さん・求職者それぞれに響くストーリーへ翻訳。サイト構築からコンテンツ設計、SNSの運用・分析までワンストップで担い、"伝わる導線" と "育つコミュニティ" を同時に育てます。</p>
+                <a href="#promotion" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 4: Succession -->
+        <section class="showcase-card showcase-reverse">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #C99AC9;"></div>
+                <img src="images/service.png" alt="事業承継コンサルティング" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Succession</div>
+                <h3 class="showcase-title">事業承継<br>コンサルティング</h3>
+                <p class="showcase-description">個人経営のクリニック・薬局を中心に、経営者様の理念や地域との絆まで丁寧に掘り下げてプランを設計。財務・税務・法務の整理はもちろん、後継者選定や評価額算定、融資スキームまで一本化してプランに落とし込みます。</p>
+                <a href="#succession" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 5: Analysis -->
+        <section class="showcase-card">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #7DB9DE;"></div>
+                <img src="images/service.png" alt="組織診断・分析" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Analysis</div>
+                <h3 class="showcase-title">組織診断・<br>分析</h3>
+                <p class="showcase-description">スタッフの声や、職場に漂う空気感──数字だけでは掴めない"組織の温度"を多角的に探り、見えない輪郭を浮かび上がらせます。固有の文化や相互作用に潜むゆらぎを丁寧に言語化し、強みと伸びしろを物語として整理。</p>
+                <a href="#analysis" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Card 6: Education -->
+        <section class="showcase-card showcase-reverse">
+            <div class="showcase-image-wrapper">
+                <div class="showcase-accent" style="background: #FFB6C1;"></div>
+                <img src="images/service.png" alt="人材育成支援" class="showcase-image" loading="lazy">
+            </div>
+            <div class="showcase-content">
+                <div class="showcase-tag">Education</div>
+                <h3 class="showcase-title">人材育成<br>支援</h3>
+                <p class="showcase-description">臨床現場を想定した場面演習や多職種の勉強会、短時間で学べる映像教材などを組み合わせ、知識と判断力を着実に伸ばす研修を行います。新人・中堅・管理職ごとに研修計画を作り、医療安全、接遇、チーム運営など幅広いテーマを無理なく学べるしくみを整えます。</p>
+                <a href="#education" class="showcase-more">
+                    <span>MORE</span>
+                    <span class="showcase-line"></span>
+                    <svg class="showcase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div style="height: 100px;"></div>
+</body>
+</html>
