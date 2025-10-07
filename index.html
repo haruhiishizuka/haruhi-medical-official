@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/showcase.css">
     <link rel="stylesheet" href="css/tab-showcase.css">
+    <link rel="stylesheet" href="css/philosophy-enhanced.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
                 <div style="display: flex; align-items: center; gap: 2rem;">
                     <ul class="nav-menu">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="pages/services.html">Service</a></li>
+                        <li><a href="#services-overview">Service</a></li>
                         <li><a href="pages/about.html">About Us</a></li>
                         <li><a href="pages/news/index.html">News</a></li>
                         <li><a href="pages/contact.html">Contact</a></li>
@@ -342,71 +343,53 @@
     </section>
     -->
 
-    <section class="news-section" style="background-color: #f5f7f4; padding: 80px 0;">
-        <div class="container">
-            <h2 class="section-title">News & Insights</h2>
-            <div class="news-tabs">
-                <button class="tab-btn active" data-tab="news">ニュース</button>
-                <button class="tab-btn" data-tab="columns">コラム</button>
+    <section class="news-section" style="background-color: #fff; padding: 80px 0;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="section-title" style="font-size: 24px; font-weight: 600; letter-spacing: 0.2em; margin-bottom: 50px; color: #333;">NEWS</h2>
+
+            <div class="news-list-simple">
+                <article class="news-list-item" style="border-bottom: 1px solid #e0e0e0; padding: 24px 0; display: flex; gap: 40px; align-items: baseline;">
+                    <time style="font-size: 14px; color: #999; min-width: 100px; letter-spacing: 0.05em;">2025年10月5日</time>
+                    <h3 style="font-size: 16px; font-weight: 400; line-height: 1.8; color: #333; margin: 0;">
+                        <a href="pages/news/medimatch-release.html" style="color: #333; text-decoration: none; transition: color 0.2s;">転職支援サービス「MediMatch」をリリース</a>
+                    </h3>
+                </article>
+
+                <article class="news-list-item" style="border-bottom: 1px solid #e0e0e0; padding: 24px 0; display: flex; gap: 40px; align-items: baseline;">
+                    <time style="font-size: 14px; color: #999; min-width: 100px; letter-spacing: 0.05em;">2025年10月3日</time>
+                    <h3 style="font-size: 16px; font-weight: 400; line-height: 1.8; color: #333; margin: 0;">
+                        <a href="pages/news/obon-holiday-2025.html" style="color: #333; text-decoration: none; transition: color 0.2s;">お盆休みについて</a>
+                    </h3>
+                </article>
+
             </div>
-            
-            <div class="news-content">
-                <div class="news-tab active" id="news">
-                    <div class="news-grid">
-                        <article class="news-card">
-                            <div class="news-date">2025.04.01</div>
-                            <h3><a href="pages/news/medimatch-release.html">転職支援サービス「MediMatch」をリリース</a></h3>
-                            <p>医療従事者専門の転職支援サービス「MediMatch」の提供を開始いたします...</p>
-                        </article>
-                        <article class="news-card">
-                            <div class="news-date">2025.08.01</div>
-                            <h3><a href="pages/news/obon-holiday-2025.html">お盆休みについて</a></h3>
-                            <p>誠に勝手ながら、下記期間をお盆休業とさせていただきます...</p>
-                        </article>
-                    </div>
-                </div>
-                
-                <div class="news-tab" id="columns">
-                    <div class="news-grid">
-                        <article class="news-card">
-                            <div class="news-date">2024.01.12</div>
-                            <h3>医療DXの現状と課題：デジタル変革への道筋</h3>
-                            <p>医療業界におけるデジタルトランスフォーメーションの現状と課題、そして成功した導入事例について分析したコラムです。</p>
-                        </article>
-                        <article class="news-card">
-                            <div class="news-date">2024.01.08</div>
-                            <h3>看護師不足解決のカギ：働き方改革の重要性</h3>
-                            <p>深刻化する看護師不足問題の解決策として注目される働き方改革の具体的な取り組みと成果について考察したコラムです。</p>
-                        </article>
-                        <article class="news-card">
-                            <div class="news-date">2024.01.03</div>
-                            <h3>医療機関の事業承継：成功のポイントとは</h3>
-                            <p>高齢化が進む医療機関経営者の事業承継について、成功するためのポイントと実際の事例を紹介したコラムです。</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="news-more">
-                <a href="pages/news/index.html" class="btn btn-outline">
-                    <i class="fas fa-plus"></i> すべて見る
+
+            <div class="news-more" style="margin-top: 50px;">
+                <a href="pages/news/index.html" style="display: inline-flex; align-items: center; gap: 8px; color: #333; text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.05em;">
+                    ニュース一覧 <span style="font-size: 16px;">→</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="cta-section" style="background-image: url('images/haikei.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; padding: 120px 0;">
-        <div class="hero-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);"></div>
-        <div class="container" style="position: relative; z-index: 2;">
-            <div class="cta-content">
-                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">医療業界の課題解決を<br>一緒に始めませんか？</h2>
-                <p style="color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">お気軽にご相談ください。専門コンサルタントが対応いたします。</p>
-                <div class="cta-buttons" style="text-align: center;">
-                    <a href="pages/contact.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-envelope"></i> お問い合わせ
-                    </a>
-                </div>
-            </div>
+    <section class="cta-section" style="background-image: url('images/haikei.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; padding: 120px 0; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.65);"></div>
+        <div class="container" style="position: relative; z-index: 2; max-width: 800px; text-align: center;">
+            <h3 style="color: #F4A460; font-size: 14px; letter-spacing: 0.2em; margin-bottom: 20px; font-weight: 600;">OUR PHILOSOPHY</h3>
+            <h2 style="color: white; font-size: 28px; line-height: 1.6; margin-bottom: 25px; font-weight: 600;">
+                医療の現場で、一人ひとりの笑顔を咲かせたい。
+            </h2>
+            <p style="color: #E8E8E8; font-size: 15px; line-height: 1.8; margin-bottom: 20px; font-style: italic;">
+                Happiness is a matter of will. – Alain<br>
+                幸福は、意志ある者の手にある。
+            </p>
+            <p style="color: white; font-size: 16px; line-height: 1.9; margin-bottom: 0;">
+                医療に携わる人々の声に耳を傾け、その想いに寄り添いながら、<br>
+                私たちは意志の力を信じています。<br>
+                一人ひとりが自分らしく輝けるはたらき方を共に探し、<br>
+                医療の未来に新しい可能性を生み出していく。<br>
+                それが、私たちが目指す道です。
+            </p>
         </div>
     </section>
 

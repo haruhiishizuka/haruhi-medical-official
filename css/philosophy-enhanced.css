@@ -1,0 +1,657 @@
+/* ==========================================
+   Philosophy Section - Enhanced Design
+   ========================================== */
+
+.philosophy-section {
+    padding: 8rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ece7 50%, #f8f9fa 100%);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #333333;
+}
+
+/* 背景パターン装飾 */
+.philosophy-background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(129, 125, 108, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(129, 125, 108, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.philosophy-content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* 引用符装飾 */
+.philosophy-quote-mark {
+    font-size: 10rem;
+    line-height: 0.5;
+    color: rgba(129, 125, 108, 0.15);
+    font-family: Georgia, serif;
+    margin-bottom: -2rem;
+    user-select: none;
+}
+
+.philosophy-section-title {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', Georgia, serif;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+.philosophy-author {
+    font-size: 1.2rem;
+    color: #817d6c;
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+/* 区切り線装飾 */
+.philosophy-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #817d6c, transparent);
+    margin: 2rem auto;
+    position: relative;
+}
+
+.philosophy-divider::before {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #817d6c;
+    font-size: 0.8rem;
+    background: #f8f9fa;
+    padding: 0 0.5rem;
+}
+
+.philosophy-quote {
+    margin: 2rem 0 2.5rem;
+}
+
+.japanese-quote {
+    font-size: 1.8rem;
+    color: #555;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Hiragino Mincho ProN', serif;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+}
+
+.philosophy-description {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.philosophy-description p {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #444;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', sans-serif;
+    font-weight: 400;
+}
+
+.pc-only {
+    display: inline;
+}
+
+/* ==========================================
+   Mission Section - Enhanced Design
+   ========================================== */
+
+.mission-section {
+    padding: 100px 0;
+    background:
+        linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(233, 236, 231, 0.95) 100%),
+        url('../images/backk.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 背景装飾パターン */
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(158, 212, 156, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(129, 200, 217, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(244, 164, 96, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* 幾何学模様装飾 */
+.mission-section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(129, 125, 108, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.mission-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.mission-header {
+    margin-bottom: 3rem;
+}
+
+.mission-title {
+    font-size: 4rem;
+    color: #000000;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', sans-serif;
+}
+
+.mission-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', serif;
+    letter-spacing: 0.05em;
+}
+
+.mission-content {
+    margin: 3rem auto 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.mission-text-wrapper {
+    position: relative;
+    padding: 3rem 4rem;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    border: 2px solid rgba(129, 125, 108, 0.15);
+    overflow: hidden;
+}
+
+/* コーナー装飾 - 疑似要素を使わず、.mission-text-wrapperに直接ボーダーイメージを追加 */
+.mission-text-wrapper {
+    background-image:
+        linear-gradient(to right, #817d6c 2px, transparent 2px),
+        linear-gradient(to bottom, #817d6c 2px, transparent 2px),
+        linear-gradient(to right, #817d6c 2px, transparent 2px),
+        linear-gradient(to bottom, #817d6c 2px, transparent 2px);
+    background-size: 40px 40px, 40px 40px, 40px 40px, 40px 40px;
+    background-position: 15px 15px, 15px 15px, right 15px bottom 15px, right 15px bottom 15px;
+    background-repeat: no-repeat;
+}
+
+.mission-text {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 500;
+    line-height: 2;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Hiragino Mincho ProN', serif;
+    letter-spacing: 0.05em;
+}
+
+/* ==========================================
+   Value Section - Enhanced Card Design
+   ========================================== */
+
+.insight-section {
+    margin-top: 80px;
+    padding: 4rem 0;
+    position: relative;
+}
+
+/* VALUEセクション背景装飾 */
+.insight-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(154, 216, 76, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.insight-section::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(129, 200, 217, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.insight-header {
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.insight-title {
+    font-size: 3.5rem;
+    color: #000000;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', sans-serif;
+}
+
+.insight-subtitle {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', serif;
+    letter-spacing: 0.05em;
+}
+
+.insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.insight-card {
+    position: relative;
+    perspective: 1000px;
+    transition: transform 0.3s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-8px);
+}
+
+.insight-card-inner {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    height: 100%;
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08),
+        0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(129, 125, 108, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.insight-card:hover .insight-card-inner {
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12),
+        0 2px 5px rgba(0, 0, 0, 0.08);
+    border-color: rgba(129, 125, 108, 0.3);
+}
+
+/* グラデーション装飾 */
+.insight-card-inner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #817d6c, #9AD84C, #81C8D9);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.insight-card:hover .insight-card-inner::before {
+    opacity: 1;
+}
+
+.insight-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(129, 125, 108, 0.08);
+    font-family: 'Arial', sans-serif;
+    line-height: 1;
+    transition: all 0.4s ease;
+}
+
+.insight-card:hover .insight-number {
+    color: rgba(129, 125, 108, 0.15);
+    transform: scale(1.1);
+}
+
+.insight-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f8f9fa, #e9ece7);
+    padding: 15px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.insight-card:hover .insight-icon-wrapper {
+    background: linear-gradient(135deg, #817d6c, #928c7b);
+    transform: rotate(5deg) scale(1.05);
+}
+
+.insight-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: all 0.4s ease;
+    filter: grayscale(20%);
+}
+
+.insight-card:hover .insight-icon {
+    filter: grayscale(0%) brightness(1.1);
+}
+
+.insight-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin: 0;
+    font-family: 'Yu Kyokasho', 'YuKyokasho', '游教科書体', 'Hiragino Mincho ProN', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.3s ease;
+}
+
+.insight-card:hover .insight-text {
+    color: #2c3e50;
+}
+
+/* ==========================================
+   Responsive Design - タブレット
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .philosophy-section {
+        padding: 6rem 0;
+    }
+
+    .philosophy-content-wrapper {
+        padding: 2.5rem;
+    }
+
+    .philosophy-quote-mark {
+        font-size: 8rem;
+    }
+
+    .philosophy-section-title {
+        font-size: 2.2rem;
+    }
+
+    .japanese-quote {
+        font-size: 1.6rem;
+    }
+
+    .philosophy-description p {
+        font-size: 1.1rem;
+    }
+
+    .mission-title {
+        font-size: 3.5rem;
+    }
+
+    .mission-text {
+        font-size: 1.6rem;
+    }
+
+    .insight-title {
+        font-size: 3rem;
+    }
+
+    .insight-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* ==========================================
+   Responsive Design - モバイル
+   ========================================== */
+
+@media (max-width: 767px) {
+    .philosophy-section {
+        padding: 4rem 0;
+    }
+
+    .philosophy-content-wrapper {
+        padding: 2rem 1.5rem;
+        border-radius: 20px;
+        margin: 0 1rem;
+    }
+
+    .philosophy-quote-mark {
+        font-size: 5rem;
+        margin-bottom: -1rem;
+    }
+
+    .philosophy-section-title {
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+        line-height: 1.6;
+    }
+
+    .philosophy-author {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .philosophy-divider {
+        width: 40px;
+        margin: 1.5rem auto;
+    }
+
+    .japanese-quote {
+        font-size: 1.2rem;
+        letter-spacing: 0.05em;
+        line-height: 1.8;
+    }
+
+    .philosophy-description p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .pc-only {
+        display: none;
+    }
+
+    .mission-section {
+        padding: 60px 0;
+    }
+
+    .mission-header {
+        margin-bottom: 2rem;
+    }
+
+    .mission-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.1em;
+    }
+
+    .mission-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .mission-content {
+        margin: 2rem auto 3rem;
+    }
+
+    .mission-text-wrapper {
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        margin: 0 1rem;
+    }
+
+    .mission-text-wrapper::before,
+    .mission-text-wrapper::after {
+        width: 25px;
+        height: 25px;
+    }
+
+    .mission-text-wrapper::before {
+        top: 10px;
+        left: 10px;
+    }
+
+    .mission-text-wrapper::after {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .mission-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        letter-spacing: 0.03em;
+    }
+
+    .insight-section {
+        margin-top: 50px;
+    }
+
+    .insight-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .insight-title {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+    }
+
+    .insight-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .insight-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .insight-card-inner {
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+    }
+
+    .insight-number {
+        font-size: 2.5rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .insight-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1.2rem;
+    }
+
+    .insight-text {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+}
+
+/* 極小デバイス用 */
+@media (max-width: 480px) {
+    .philosophy-section-title {
+        font-size: 1.2rem;
+    }
+
+    .japanese-quote {
+        font-size: 1.1rem;
+    }
+
+    .philosophy-description p {
+        font-size: 0.9rem;
+    }
+
+    .mission-title {
+        font-size: 2rem;
+    }
+
+    .mission-text {
+        font-size: 1.1rem;
+    }
+
+    .insight-title {
+        font-size: 1.8rem;
+    }
+
+    .insight-card-inner {
+        padding: 1.5rem 1rem;
+    }
+
+    .insight-text {
+        font-size: 0.85rem;
+    }
+}
