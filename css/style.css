@@ -6430,8 +6430,17 @@ section {
     .services-overview .service-content {
         display: none !important;
     }
-    
+
     .services-overview .service-content.active {
+        display: block !important;
+    }
+
+    /* Showcase tab content styles */
+    .services-overview .service-tab-content {
+        display: none !important;
+    }
+
+    .services-overview .service-tab-content.active {
         display: block !important;
     }
     

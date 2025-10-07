@@ -66,16 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // サービスタブ切り替え
     const serviceTabs = document.querySelectorAll('.service-tab');
-    const serviceContents = document.querySelectorAll('.service-content');
+    const serviceContents = document.querySelectorAll('.service-tab-content');
 
     serviceTabs.forEach(tab => {
         tab.addEventListener('click', function() {
             const targetContent = this.getAttribute('data-target');
-            
+
             // タブのアクティブ状態を切り替え
             serviceTabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
-            
+
             // コンテンツの表示を切り替え
             serviceContents.forEach(content => {
                 content.classList.toggle('active', content.id === targetContent);
