@@ -3,7 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 const server = http.createServer((req, res) => {
-    let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+    // クエリパラメータを除去
+    const urlPath = req.url.split('?')[0];
+    let filePath = path.join(__dirname, urlPath === '/' ? 'index.html' : urlPath);
     
     const extname = path.extname(filePath);
     let contentType = 'text/html';
